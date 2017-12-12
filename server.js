@@ -1,21 +1,10 @@
-'use strict';
-const log = require('logger')(module);
-const db = require('db');
-db.connect();
+var http = require('http');
 
-const User = require('./user/index.js');
+var server = new http.Server();
 
-function run() {
-  const vasya = new User('Вася');
-  const petya = new User('Петя');
+server.listen(1337, '127.0.0.1');
 
-  vasya.hello(petya);
-
-  log(db.getPhrase('Run successful'));
-}
-
-if (module.parent){
-  exports.run = run;
-}else{
-  run();
-}
+var counter = 0;
+server.on('request', function (req, res) {
+  res.end('Hello world ' + ++counter);
+});
