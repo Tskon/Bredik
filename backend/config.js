@@ -1,7 +1,7 @@
 const PORT = 80;
-const distPath = './dist/';
+const publicPath = './dist/';
 
 module.exports = {
   PORT,
-  distPath
+  publicPath
 };
