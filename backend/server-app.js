@@ -7,11 +7,11 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-  renderPage('js/bundle.js', req, res);
+  renderPage('js/app.js', req, res);
 });
 
 app.get('/admin', (req, res) => {
-  renderPage('js/admin/admin-bundle.js', req, res);
+  renderPage('js/admin-app.js', req, res);
 });
 
 app.use(express.static(cfg.publicPath));
