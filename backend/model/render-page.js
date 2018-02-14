@@ -13,10 +13,8 @@ class PageRender {
       res.send($.html());
     })
   }
-
 }
 
 module.exports = (scriptName, req, res) => {
-  const page = new PageRender(scriptName, req, res);
+  new PageRender(scriptName, req, res);
 };
-

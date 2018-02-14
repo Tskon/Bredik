@@ -21,10 +21,13 @@
   },
   "homepage": "https://github.com/Tskon/Bredik#readme",
   "dependencies": {
+    "bootstrap": "4.0.0",
     "cheerio": "1.0.0-rc.2",
     "express": "4.16.2",
+    "jquery": "3.3.1",
     "passport": "0.4.0",
-    "react": "16.2.0"
+    "react": "16.2.0",
+    "react-dom": "16.2.0"
   },
   "devDependencies": {
     "autoprefixer": "8.0.0",
