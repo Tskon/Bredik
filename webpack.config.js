@@ -9,7 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-var isProduction = (process.env.NODE_ENV === 'production');
+const isProduction = (process.env.NODE_ENV === 'production');
 
 module.exports = {
   //basic path to project
@@ -38,11 +38,16 @@ module.exports = {
             },
             {
               loader: 'postcss-loader',
-              options: {sourceMap: true}
+              options: {
+                ident: 'postcss',
+                plugins: (loader) => [
+                  require('autoprefixer')()
+                ]
+              }
             },
             {
               loader: 'sass-loader',
-              options: {sourceMap: true}
+
             }
           ],
           fallback: "style-loader",
@@ -62,6 +67,23 @@ module.exports = {
           'img-loader'
         ]
       },
+
+      // fonts
+      {
+        test : /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {name: '[path][name].[ext]'}
+          }
+        ]
+      },
+
+      // SVG
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader'
+      }
     ]
   },
   plugins: [
@@ -73,8 +95,7 @@ module.exports = {
     )
   ]
 };
-console.log('isProduction', isProduction);
-console.log('nodeenv', process.env.NODE_ENV);
+
 if (isProduction) {
   module.exports.plugins.push(
     new UglifyJSPlugin({sourceMap: true})
@@ -90,25 +111,3 @@ if (isProduction) {
     })
   );
 }
-
-
-// {
-//   test: /\.scss$/,
-//   use: [{
-//     loader: 'style-loader', // inject CSS to page
-//   }, {
-//     loader: 'css-loader', // translates CSS into CommonJS modules
-//   }, {
-//     loader: 'postcss-loader', // Run post css actions
-//     options: {
-//       plugins: function () { // post css plugins, can be exported to postcss.config.js
-//         return [
-//           require('precss'),
-//           require('autoprefixer')
-//         ];
-//       }
-//     }
-//   }, {
-//     loader: 'sass-loader' // compiles Sass to CSS
-//   }]
-// }
