@@ -4,8 +4,6 @@ const renderPage = require('./model/render-page');
 
 const app = express();
 
-
-
 app.get('/', (req, res) => {
   renderPage('js/app.js', req, res);
 });
