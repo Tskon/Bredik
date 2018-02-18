@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap';
 
 // Layouts
 // import Index from './layouts/index';
