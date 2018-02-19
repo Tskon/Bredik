@@ -1,3 +1,5 @@
 import React from 'react';
 
-import rightBlock from '../components/right-block';
+import RightBlock from '../components/right-block';
+
+ReactDOM.render(<RightBlock/>, )
