@@ -14,5 +14,5 @@ app.get('/admin', (req, res) => {
 
 app.use(express.static(cfg.publicPath));
 
-app.listen(cfg.PORT);
+app.listen(process.env.PORT || cfg.PORT);
 console.log('server was started: http://localhost:' + cfg.PORT);
