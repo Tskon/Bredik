@@ -2,4 +2,12 @@ import React from 'react';
 
 import RightBlock from '../components/right-block';
 
-ReactDOM.render(<RightBlock/>, )
+export default class Index extends React.Component {
+  render() {
+    return (
+      <div className='container'>
+        <RightBlock/>
+      </div>
+    )
+  }
+}

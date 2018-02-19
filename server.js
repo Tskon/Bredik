@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-  renderPage('js/admin-app.js', req, res);
+  renderPage('js/admin.js', req, res);
 });
 
 app.use(express.static(cfg.publicPath));

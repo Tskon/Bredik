@@ -2,7 +2,7 @@
   "name": "bredik",
   "version": "0.0.1",
   "description": "First version of this project. Project with complete solutions for dev",
-  "main": "./backend/server-app.js",
+  "main": "./server.js",
   "scripts": {
     "build": "webpack -w",
     "production": "webpack -p"
@@ -50,5 +50,9 @@
     "svg-url-loader": "2.3.1",
     "uglifyjs-webpack-plugin": "1.1.8",
     "webpack": "3.11.0"
+  },
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.6.0"
   }
 }
