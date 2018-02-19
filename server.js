@@ -1,6 +1,6 @@
 const express = require('express');
-const cfg = require('./config');
-const renderPage = require('./model/render-page');
+const cfg = require('./backend/config');
+const renderPage = require('./backend/model/render-page');
 
 const app = express();
 
