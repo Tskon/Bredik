@@ -4,6 +4,7 @@
   "description": "First version of this project. Project with complete solutions for dev",
   "main": "./server.js",
   "scripts": {
+    "start": "node server.js",
     "build": "webpack -w",
     "production": "webpack -p"
   },
@@ -52,7 +53,6 @@
     "webpack": "3.11.0"
   },
   "engines": {
-    "node": "8.9.1",
-    "npm": "5.6.0"
+    "node": "8.9.1"
   }
 }
