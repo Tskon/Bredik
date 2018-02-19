@@ -1,4 +1,4 @@
-const PORT = 80;
+const PORT = 8000;
 const publicPath = './dist/';
 
 module.exports = {
