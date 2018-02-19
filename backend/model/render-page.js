@@ -4,7 +4,7 @@ const cfg = require('../config');
 
 class PageRender {
   constructor(bundle, req, res) {
-    const file = '../../' + cfg.publicPath + 'index.html';
+    const file = qwertytele2cfg.publicPath + 'index.html';
 
     fs.readFile(file, (err, html) => {
       if(err) throw err;
