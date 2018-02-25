@@ -1,0 +1,10 @@
+.header{
+  text-align: center;
+  background: url("../../img/svg/bredik.svg") no-repeat;
+}
+.header__project-name{
+  font-size: 170px;
+  &:hover{
+    text-decoration: none;
+  }
+}

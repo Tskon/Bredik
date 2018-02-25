@@ -88,7 +88,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("../css/[name].css"),
-    new CleanWebpackPlugin(['dist']),
+    // new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin(
       [{from: './img', to: '../img'}, {from:'./index.html', to: '../'}],
       {ignore: [{glob: 'svg/*'}]}
