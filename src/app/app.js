@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Layouts
-import Index from './layouts/index';
+import Main from './layouts/main';
 
-ReactDOM.render(<Index/>, document.querySelector('main'));
+ReactDOM.render(<Main/>, document.querySelector('main'));
