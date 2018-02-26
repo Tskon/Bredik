@@ -4,6 +4,9 @@
 .header__project-name a{
   font-size: 150px;
 }
+.header__project-description{
+  min-width: 435px;
+}
 .header__login-btn-wrapper{
   padding-top: 15px;
   text-align: right;
@@ -15,6 +18,14 @@
 .header__text{
   //text-align: center;
 }
-.header__project-description{
-  min-width: 435px;
+
+
+@media screen and (max-device-width: 600px){
+  .header__project-name a{
+    font-size: 80px;
+  }
+  .header__project-description{
+    min-width: 0;
+    display: inline-block;
+  }
 }
