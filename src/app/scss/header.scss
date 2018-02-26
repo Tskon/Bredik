@@ -1,10 +1,20 @@
 .header{
-  text-align: center;
+  //text-align: center;
+}
+.header__project-name a{
+  font-size: 150px;
+}
+.header__login-btn-wrapper{
+  padding-top: 15px;
+  text-align: right;
+}
+
+.header__logo{
   background: url("../../img/svg/bredik.svg") no-repeat;
 }
-.header__project-name{
-  font-size: 170px;
-  &:hover{
-    text-decoration: none;
-  }
+.header__text{
+  text-align: center;
+}
+.header__project-description{
+  min-width: 435px;
 }

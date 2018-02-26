@@ -2,3 +2,23 @@
 @import "variables";
 @import "bootstrap-theme";
 @import "header";
+
+main{
+  color: $dark;
+  background: $light;
+}
+
+a{
+  color: $dark;
+  transition: 200ms;
+  &:hover{
+    text-decoration: none;
+    color: lighten($dark, 7%);
+  }
+}
+//
+//@media screen and (max-device-width: 1200px){
+//  main{
+//    background: $light;
+//  }
+//}

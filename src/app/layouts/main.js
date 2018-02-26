@@ -11,9 +11,9 @@ import Menu from '../components/menu/main-menu';
 export default class Index extends React.Component {
   render(){
     return (
-      <div className="container">
+      <div className="container-fluid">
         <Header/>
-        {/*<Menu/>*/}
+        <Menu/>
         {/*<IndexContent/>*/}
       </div>
     )
