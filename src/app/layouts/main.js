@@ -14,7 +14,7 @@ export default class Index extends React.Component {
       <div className="container-fluid">
         <Header/>
         <Menu/>
-        {/*<IndexContent/>*/}
+        <IndexContent/>
       </div>
     )
   }
