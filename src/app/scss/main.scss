@@ -1,7 +1,9 @@
 @import "../../bootstrap4";
 @import "variables";
 @import "bootstrap-theme";
+
 @import "header";
+@import "main-menu";
 
 main{
   color: $dark;
@@ -30,6 +32,10 @@ a{
     text-decoration: none;
     color: lighten($dark, 7%);
   }
+}
+
+nav{
+  border-radius: 5px;
 }
 //
 //@media screen and (max-device-width: 1200px){

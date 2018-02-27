@@ -1,0 +1,11 @@
+.main-menu{
+  opacity: 0.8;
+  //background-color: transparent !important;
+  border: 1px solid $blue;
+  & a{
+    color: $light;
+  }
+  & span{
+    color: $light !important;
+  }
+}
