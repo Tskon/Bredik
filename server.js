@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 
 const cfg = require('./backend/config');
 const renderPage = require('./backend/model/render-page');
@@ -20,13 +21,13 @@ app
     cookie: {secure: true}
   }))
 
-  //passport
+  // Passport
   .use(passport.initialize())
   .use(passport.session())
   // Auth system
-  .post('/login', controllers.users.login)
-  .post('/register', controllers.users.register)
-  .get('/logout', controllers.users.logout)
+  // .post('/login', controllers.users.login)
+  // .post('/register', controllers.users.register)
+  // .get('/logout', controllers.users.logout)
 
   .get('/', (req, res) => {
     renderPage('js/app.js', req, res);
