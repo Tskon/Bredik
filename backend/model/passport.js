@@ -1,6 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
+console.log('auth!!!!!!!!');
 
 passport.use(new LocalStrategy({
     _usernameField: 'login',
@@ -31,7 +32,6 @@ passport.deserializeUser(function(id, done) {
       : done(null,user);
   });
 });
-
 
 module.exports.login = function(req, res, next) {
   passport.authenticate('local',
@@ -67,4 +67,11 @@ module.exports.register = function(req, res, next) {
           : res.redirect('/private');
       });
   });
+};
+
+// middleware проверка аутентификации
+module.exports.mustAuthenticatedMw = function (req, res, next){
+  req.isAuthenticated()
+    ? next()
+    : res.redirect('/');
 };

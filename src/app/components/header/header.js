@@ -1,5 +1,7 @@
 import React from 'react';
 
+import EnterButton from '../modals/login-modal';
+
 export default class Header extends React.Component {
   render() {
     return (
@@ -8,7 +10,7 @@ export default class Header extends React.Component {
           <h1 className='header__project-name'><a href='#'>Bredik</a></h1>
           <h5 className='header__project-description'>Сборник готовых решений для разработчика</h5></div>
         <div className="col-md-2 col-sm-6 header__login-btn-wrapper">
-          <a href='/admin' className='btn btn-outline-primary btn-authorization-align'>Войти</a>
+          <EnterButton/>
         </div>
       </section>
     )

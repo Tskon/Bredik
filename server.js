@@ -3,12 +3,14 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
 
 const cfg = require('./backend/config');
 const renderPage = require('./backend/model/render-page');
-require('./backend/model/passport');
+const passportModel = require('./backend/model/passport');
 
 const app = express();
+
 
 app
   .use(cookieParser())
@@ -24,15 +26,16 @@ app
   // Passport
   .use(passport.initialize())
   .use(passport.session())
-  // Auth system
-  // .post('/login', controllers.users.login)
-  // .post('/register', controllers.users.register)
-  // .get('/logout', controllers.users.logout)
+  .post('/login', passportModel.login)
+  .post('/register', passportModel.register)
+  .get('/logout', passportModel.logout)
 
   .get('/', (req, res) => {
     renderPage('js/app.js', req, res);
   })
-  .get('/admin', (req, res) => {
+  // .all('admin', passportModel.mustAuthenticatedMw)
+  // .all('admin/*', passportModel.mustAuthenticatedMw)
+  .get('/admin', passportModel.mustAuthenticatedMw, (req, res) => {
     renderPage('js/admin.js', req, res);
   })
   .use(express.static(cfg.publicPath))
