@@ -11,7 +11,6 @@ const passportModel = require('./backend/model/passport');
 
 const app = express();
 
-
 app
   .use(cookieParser())
   .use(bodyParser.urlencoded({extended: false}))
@@ -24,18 +23,23 @@ app
   }))
 
   // Passport
-  .use(passport.initialize())
-  .use(passport.session())
-  .post('/login', passportModel.login)
-  .post('/register', passportModel.register)
-  .get('/logout', passportModel.logout)
+  .post('/login',
+    passport.authenticate('local', {successRedirect: '/admin', failureRedirect: '/', failureFlash: true}),
+    (req, res) => {
+      // If this function gets called, authentication was successful.
+      // `req.user` contains the authenticated user.
+      // res.redirect('/users/' + req.user.username);
+    })
+  // .use(passport.initialize())
+  // .use(passport.session())
+  // .post('/login', passportModel.login)
+  // .post('/register', passportModel.register)
+  // .get('/logout', passportModel.logout)
 
   .get('/', (req, res) => {
     renderPage('js/app.js', req, res);
   })
-  // .all('admin', passportModel.mustAuthenticatedMw)
-  // .all('admin/*', passportModel.mustAuthenticatedMw)
-  .get('/admin', passportModel.mustAuthenticatedMw, (req, res) => {
+  .get('/admin', (req, res) => {
     renderPage('js/admin.js', req, res);
   })
   .use(express.static(cfg.publicPath))
