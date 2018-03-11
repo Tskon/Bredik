@@ -18,14 +18,15 @@ export default class Login extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form className="form-group" action="/login" method="post">
-                  <label htmlFor="email">Email</label>
-                  <input type="emeil" name="email" placeholder="Your Email"/>
-                  <br/>
-                  <label htmlFor="password">Password</label>
-                  <input type="password" name="password" placeholder="Your Password"/>
-                  <button type="Login" className="btn btn-primary">Войти</button>
-                </form>
+                <a href="/auth/google">Google</a>
+                {/*<form className="form-group" action="/login" method="post">*/}
+                  {/*<label htmlFor="email">Email</label>*/}
+                  {/*<input type="emeil" name="email" placeholder="Your Email"/>*/}
+                  {/*<br/>*/}
+                  {/*<label htmlFor="password">Password</label>*/}
+                  {/*<input type="password" name="password" placeholder="Your Password"/>*/}
+                  {/*<button type="Login" className="btn btn-primary">Войти</button>*/}
+                {/*</form>*/}
               </div>
             </div>
           </div>

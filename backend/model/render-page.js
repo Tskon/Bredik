@@ -1,6 +1,6 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
-const cfg = require('../config');
+const cfg = require('../config/database');
 
 class PageRender {
   constructor(bundle, req, res) {

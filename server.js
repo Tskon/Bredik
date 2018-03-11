@@ -1,13 +1,15 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const bodyParser = require('body-parser');
-const passport = require('passport');
-// const LocalStrategy = require('passport-local').Strategy;
+const express = require('express'),
+  cookieParser = require('cookie-parser'),
+  session = require('express-session'),
+  bodyParser = require('body-parser'),
+  passport = require('./backend/model/auth');
 
-const cfg = require('./backend/config');
-const renderPage = require('./backend/model/render-page');
-const passportModel = require('./backend/model/passport');
+//const passport = require('passport'),
+// LocalStrategy = require('passport-local').Strategy;
+
+const serverCfg = require('./backend/config/server'),
+  renderPage = require('./backend/model/render-page'),
+  passportModel = require('./backend/model/auth');
 
 const app = express();
 
@@ -18,31 +20,34 @@ app
   .use(session({
     secret: 'bredik-secret-some-small-key',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {secure: true}
   }))
 
-  // Passport
-  .post('/login',
-    passport.authenticate('local', {successRedirect: '/admin', failureRedirect: '/', failureFlash: true}),
-    (req, res) => {
-      // If this function gets called, authentication was successful.
-      // `req.user` contains the authenticated user.
-      // res.redirect('/users/' + req.user.username);
-    })
-  // .use(passport.initialize())
-  // .use(passport.session())
-  // .post('/login', passportModel.login)
-  // .post('/register', passportModel.register)
-  // .get('/logout', passportModel.logout)
+  .use(passport.initialize())
+  .use(passport.session())
 
+  .use(express.static(serverCfg.publicPath))
   .get('/', (req, res) => {
     renderPage('js/app.js', req, res);
+  })
+  .get('/auth/google',
+    passport.authenticate('google', { scope: ['openid email profile'] }))
+  .get('/auth/google/callback',
+    passport.authenticate('google', {
+      failureRedirect: '/login'
+    }),
+    function(req, res) {
+      // Authenticated successfully
+      res.redirect('/');
+    })
+  .get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
   })
   .get('/admin', (req, res) => {
     renderPage('js/admin.js', req, res);
   })
-  .use(express.static(cfg.publicPath))
-  .listen(process.env.PORT || cfg.PORT);
+  .listen(process.env.PORT || serverCfg.PORT);
 
-console.log('server was started: http://localhost:' + cfg.PORT);
+console.log('server was started: http://localhost:' + serverCfg.PORT);
