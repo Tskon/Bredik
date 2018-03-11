@@ -3,10 +3,12 @@ const passport = require('passport'),
   authConfig = require('../config/auth');
 
 passport.serializeUser(function(user, done) {
+  // console.log('user', user);
   done(null, user);
 });
 
 passport.deserializeUser(function(obj, done) {
+  // console.log('obj', obj);
   done(null, obj);
 });
 
@@ -19,7 +21,7 @@ passport.use(new GoogleStrategy(
     // Typically you would query the database to find the user record
     // associated with this Google profile, then pass that object to the `done`
     // callback.
-    console.log(profile);
+    console.log('profile',profile);
     return done(null, profile);
   }
 ));
