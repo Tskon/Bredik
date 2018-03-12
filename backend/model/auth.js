@@ -35,3 +35,39 @@ function isAuth(req, res, next) {
 
 module.exports.passport = passport;
 module.exports.isAuth = isAuth;
+
+
+
+// // for Express4 in app.js:
+// const auth = require('./model/auth');
+// const cookieParser = require('cookie-parser');
+// const session = require('express-session');
+//
+// app.use(cookieParser())
+//   .use(session({
+//     secret: 'bredik-secret-some-small-key',
+//     resave: false,
+//     saveUninitialized: false
+//   }))
+//   .use(auth.passport.initialize())
+//   .use(auth.passport.session());
+//
+// app.get('/auth/google',
+//   auth.passport.authenticate('google', {scope: ['openid email profile']}));
+//
+// app.get('/auth/google/callback',
+//   auth.passport.authenticate('google', {
+//     failureRedirect: '/'
+//   }),
+//   function (req, res) {
+//     // Authenticated successfully
+//     res.redirect('/admin');
+//   });
+//
+// app.get('/logout', function (req, res) {
+//   req.logout();
+//   res.redirect('/');
+// });
+//
+// // for secret pages use middlewares:
+// app.get('/secret', auth.isAuth, (req, res) => {});

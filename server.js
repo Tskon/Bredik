@@ -12,8 +12,8 @@ const app = express();
 
 app.use(cookieParser())
   .use(bodyParser.urlencoded({extended: false}))
-  .use(bodyParser.json());
-app.use(session({
+  .use(bodyParser.json())
+  .use(session({
   secret: 'bredik-secret-some-small-key',
   resave: false,
   saveUninitialized: false
