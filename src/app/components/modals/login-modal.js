@@ -17,8 +17,8 @@ export default class Login extends React.Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body">
-                <a href="/auth/google">Google</a>
+              <div className="modal-body content-center">
+                <a className="btn btn-outline-danger btn-sm" href="/auth/google">Google</a>
                 {/*<form className="form-group" action="/login" method="post">*/}
                   {/*<label htmlFor="email">Email</label>*/}
                   {/*<input type="emeil" name="email" placeholder="Your Email"/>*/}

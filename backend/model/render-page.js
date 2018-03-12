@@ -5,7 +5,7 @@ const cfg = require('../config/database');
 class PageRender {
   constructor(bundle, req, res) {
     const file = cfg.publicPath + 'index.html';
-
+    console.log(req.user);
     fs.readFile(file, (err, html) => {
       if(err) throw err;
       let $ = cheerio.load(html);
