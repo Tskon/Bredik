@@ -3,6 +3,7 @@
   //background-color: transparent !important;
   max-width: 100%;
   border: 1px solid $blue;
+  margin-bottom: 50px;
   & a{
     color: $light;
     &:hover{
@@ -19,7 +20,15 @@
   }
 }
 
-.btn-authorization-align {
-  margin-top: 30px;
-  margin-right: 40px;
+//todo это стили для контента на главной, потом сделать файл и перенести туда
+.index-content {
+  justify-content: space-around;
+}
+
+.solution-page-preview {
+  max-width: 25%;
+}
+
+.card-text {
+  font-size: 14px;
 }
