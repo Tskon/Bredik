@@ -5,6 +5,7 @@ import EnterButton from '../modals/login-modal';
 export default class Header extends React.Component {
   render() {
     return (
+      <div className="container">
       <section className='header row justify-content-center'>
         <div className="col-sm-12 col-md-9 offset-md-1 header__text">
           <h1 className='header__project-name'><a href='#'>Bredik</a></h1>
@@ -12,7 +13,7 @@ export default class Header extends React.Component {
         <div className="col-md-2 col-sm-6 header__login-btn-wrapper">
           <EnterButton/>
         </div>
-      </section>
+      </section></div>
     )
   }
 }

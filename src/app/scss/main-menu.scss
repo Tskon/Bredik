@@ -1,6 +1,8 @@
+.main-menu-container {
+  background: $blue;
+}
+
 .main-menu{
-  //opacity: 0.8;
-  //background-color: transparent !important;
   max-width: 100%;
   border: 1px solid $blue;
   margin-bottom: 50px;
@@ -21,14 +23,26 @@
 }
 
 //todo это стили для контента на главной, потом сделать файл и перенести туда
-.index-content {
-  justify-content: space-around;
-}
-
-.solution-page-preview {
-  max-width: 25%;
-}
-
 .card-text {
   font-size: 14px;
 }
+
+.footer {
+  //background: $dark;
+  //background: url("../../img/footer-cat.png") no-repeat;
+  min-height: 126px;
+  //background-size: 100%;
+}
+
+.footer-top {
+  min-height: 60px;
+  background: url("../../img/footer-cat.png") no-repeat;
+  background-size: 60%;
+  background-position: bottom;
+}
+
+.footer-bottom {
+  background: $dark;
+  min-height: 40px;
+}
+

@@ -1,26 +1,31 @@
-.header{
+.header {
   padding-bottom: 25px;
+  background: url("../../img/svg/bredik.svg") no-repeat;
 }
+
 .header__project-name {
   margin-bottom: -12px;
-  a{
-  font-size: 100px;
+  a {
+    font-size: 100px;
+  }
 }
-}
-.header__project-description{
+
+.header__project-description {
   font-size: 18px;
   min-width: 435px;
   padding-left: 6px;
 }
-.header__login-btn-wrapper{
+
+.header__login-btn-wrapper {
   padding-top: 15px;
   text-align: right;
 }
 
-.header__logo{
+.header__logo {
   //background: url("../../img/svg/bredik.svg") no-repeat;
 }
-.header__text{
+
+.header__text {
   margin-top: 10px;
   //text-align: center;
 }
@@ -30,12 +35,11 @@
   margin-right: 40px;
 }
 
-
-@media screen and (max-device-width: 600px){
-  .header__project-name a{
+@media screen and (max-device-width: 600px) {
+  .header__project-name a {
     font-size: 80px;
   }
-  .header__project-description{
+  .header__project-description {
     min-width: 0;
     display: inline-block;
   }
