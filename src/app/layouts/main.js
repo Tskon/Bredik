@@ -7,6 +7,7 @@ import IndexContent from './index-content';
 // components
 import Header from '../components/header/header';
 import Menu from '../components/menu/main-menu';
+import Footer from '../components/footer/footer';
 
 export default class Index extends React.Component {
   render(){
@@ -15,6 +16,7 @@ export default class Index extends React.Component {
         <Header/>
         <Menu/>
         <IndexContent/>
+        <Footer/>
       </div>
     )
   }
