@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 // layouts
 import IndexContent from './index-content';
 
