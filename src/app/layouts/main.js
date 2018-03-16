@@ -13,7 +13,7 @@ export default class Index extends React.Component {
     return (
       <div className="container-fluid">
         <Header/>
-        <Menu/>
+        <Menu path={window.location.pathname}/>
         <IndexContent/>
         <Footer/>
       </div>
