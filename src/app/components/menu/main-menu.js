@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default class Menu extends React.Component {
   render() {
@@ -7,19 +8,19 @@ export default class Menu extends React.Component {
         <div className="container">
           <ul className="nav nav-tabs nav-justified">
             <li className="nav-item">
-              <a className="nav-link active" href="#">HTML/CSS</a>
+              <Link className="nav-link active" to="/">HTML/CSS</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">JavaScript</a>
+              <Link className="nav-link" to="/js">JavaScript</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Wordpress</a>
+              <Link className="nav-link" to="/wp">Wordpress</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Joomla</a>
+              <Link className="nav-link" to="/joomla">Joomla</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Drupal</a>
+              <Link className="nav-link" to="/drupal">Drupal</Link>
             </li>
           </ul>
         </div>
