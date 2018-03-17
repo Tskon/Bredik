@@ -27,31 +27,42 @@ app.use(express.static(serverCfg.publicPath));
 
 // Application routes
 
-app.get('/', (req, res) => {
+app
+  .get('/', (req, res) => {
   renderPage('js/app.js', req, res);
+})
+  .get('/admin', auth.isAuth, (req, res) => {
+  // res.send(req.user);
+  renderPage('js/admin.js', req, res);
 });
 
-app.get('/admin', auth.isAuth, (req, res) => {
-  res.send(req.user);
-  // renderPage('js/admin.js', req, res);
-});
-
-app.get('/auth/google',
-  auth.passport.authenticate('google', {scope: ['openid email profile']}));
-
-app.get('/auth/google/callback',
+app
+  .get('/auth/google',
+  auth.passport.authenticate('google', {scope: ['openid email profile']}))
+  .get('/auth/google/callback',
   auth.passport.authenticate('google', {
     failureRedirect: '/'
   }),
   function (req, res) {
     // Authenticated successfully
     res.redirect('/admin');
-  });
-
-app.get('/logout', function (req, res) {
+  })
+  .get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
+
+
+// API
+
+app
+  .post('/get/state', (req, res) => {
+    console.log(auth.isAuth());
+    res.send({
+      user: req.user,
+      reqUrl:
+    });
+  });
 
 app.listen(process.env.PORT || serverCfg.PORT);
 

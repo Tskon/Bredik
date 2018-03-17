@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 // layouts
 import IndexContent from './index-content';
