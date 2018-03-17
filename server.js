@@ -58,9 +58,9 @@ app
 app
   .post('/get/state', (req, res) => {
     console.log(auth.isAuth());
-    res.send({
+    res.json({
       user: req.user,
-      reqUrl:
+      reqUrl: req.path
     });
   });
 
