@@ -15,7 +15,7 @@ export default class Menu extends React.Component {
               <Link className={"nav-link " + this.setActive("/")} to="/">HTML/CSS</Link>
             </li>
             <li className="nav-item">
-              <Link className={"nav-link " + this.setActive("/js")} to="/js">JavaScript</Link>
+              <Link className={"nav-link " + this.setActive("/javascript")} to="/javascript">JavaScript</Link>
             </li>
             <li className="nav-item">
               <Link className={"nav-link " + this.setActive("/wp")} to="/wp">Wordpress</Link>

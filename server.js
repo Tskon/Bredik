@@ -45,8 +45,6 @@ app
 
 app
   .get('/', (req, res) => {
-    console.log('URL!!!!!', req.url);
-    if (req.url === '/') console.log('sdsdsd')
     renderPage('js/app.js', req, res);
   })
   .get('/admin', auth.isAuth, (req, res) => {

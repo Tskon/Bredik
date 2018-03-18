@@ -16,7 +16,7 @@ export default class Index extends React.Component {
         {redirect}
         <Switch>
           <Route exact path="/" component={HtmlCss}/>
-          <Route path="/js" component={Javascript}/>
+          <Route path="/javascript" component={Javascript}/>
           <Route path="/wp" component={Wordpress}/>
           <Route path="/joomla" component={Joomla}/>
           <Route path="/drupal" component={Drupal}/>
