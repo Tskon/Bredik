@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios';
+// import store from '../../redux/store';
+import {connect} from 'react-redux';
 
 // layouts
 import IndexContent from './index-content';
@@ -9,8 +10,21 @@ import Header from '../components/header/header';
 import Menu from '../components/menu/main-menu';
 import Footer from '../components/footer/footer';
 
+import {setAppState} from '../../redux/actions/app-state';
+
+// @connect((store) => {
+//   return{
+//     appState: store.appState
+//   }
+// })
+
 export default class Index extends React.Component {
-  render(){
+  componentDidMount() {
+    // store.dispatch(setAppState());
+
+  }
+
+  render() {
     return (
       <div className="container-fluid">
         <Header/>
