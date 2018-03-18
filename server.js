@@ -14,10 +14,10 @@ app.use(cookieParser())
   .use(bodyParser.urlencoded({extended: false}))
   .use(bodyParser.json())
   .use(session({
-  secret: 'bredik-secret-some-small-key',
-  resave: false,
-  saveUninitialized: false
-}));
+    secret: 'bredik-secret-some-small-key',
+    resave: false,
+    saveUninitialized: false
+  }));
 
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
@@ -28,40 +28,33 @@ app.use(express.static(serverCfg.publicPath));
 // Application routes
 
 app
-  .get('/', (req, res) => {
-  renderPage('js/app.js', req, res);
-})
-  .get('/admin', auth.isAuth, (req, res) => {
-  // res.send(req.user);
-  renderPage('js/admin.js', req, res);
-});
-
-app
   .get('/auth/google',
-  auth.passport.authenticate('google', {scope: ['openid email profile']}))
+    auth.passport.authenticate('google', {scope: ['openid email profile']}))
   .get('/auth/google/callback',
-  auth.passport.authenticate('google', {
-    failureRedirect: '/'
-  }),
-  function (req, res) {
-    // Authenticated successfully
-    res.redirect('/admin');
-  })
+    auth.passport.authenticate('google', {
+      failureRedirect: '/'
+    }),
+    function (req, res) {
+      // Authenticated successfully
+      res.redirect('/admin');
+    })
   .get('/logout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
-
-
-// API
+    req.logout();
+    res.redirect('/');
+  });
 
 app
-  .post('/get/state', (req, res) => {
-    console.log(auth.isAuth());
-    res.json({
-      user: req.user,
-      reqUrl: req.path
-    });
+  .get('/', (req, res) => {
+    console.log('URL!!!!!', req.url);
+    if (req.url === '/') console.log('sdsdsd')
+    renderPage('js/app.js', req, res);
+  })
+  .get('/admin', auth.isAuth, (req, res) => {
+    // res.send(req.user);
+    renderPage('js/admin.js', req, res);
+  })
+  .get('/*', (req, res) => {
+    res.redirect('/#' + req.url);
   });
 
 app.listen(process.env.PORT || serverCfg.PORT);

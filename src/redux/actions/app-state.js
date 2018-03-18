@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 export function setAppState(){
-  axios.post('/get/state')
-    .then(response => {
-      return{
-        type: 'SET_STATE',
-        payload: response.parseJSON
-      }
-    });
+  console.log(window.location.hash.slice(1));
+    return {
+          type: 'SET_STATE',
+          payload: {
+            user: null,
+            reqUrl: '/wp'
+          }
+        }
 }
