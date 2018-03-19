@@ -55,6 +55,19 @@ app
     res.redirect('/#' + req.url);
   });
 
+
+// API
+  app
+    .post('/get/user', (req, res) => {
+      console.log('auth',req.isAuthenticated());
+      if (req.isAuthenticated()){
+        res.json(req.user);
+      } else{
+        res.send(null);
+      }
+    });
+
+
 app.listen(process.env.PORT || serverCfg.PORT);
 
 console.log('server was started: http://localhost:' + serverCfg.PORT);
