@@ -27,7 +27,6 @@ export default class Header extends React.Component {
     axios
       .post('/get/user')
       .then((res) => {
-        console.log(res.data);
         if (res.data !== ''){
           this.login(res.data);
         }
@@ -41,17 +40,15 @@ export default class Header extends React.Component {
     let login;
 
     if (this.state.isAuth) {
-      console.log('data', this.state.data.name);
       login = (
         <div>
-          <h3>{this.state.data.displayName}</h3>
+          <h3>{this.state.data.name.givenName || this.state.data.displayName}</h3>
           <a href="/admin">Админ-панель</a>
           <br/>
           <a href="/logout">Выйти</a>
         </div>
       );
     } else {
-      console.log('else');
       login = <EnterButton/>;
     }
 

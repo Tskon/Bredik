@@ -47,7 +47,8 @@ app
   .get('/', (req, res) => {
     renderPage('js/app.js', req, res);
   })
-  .get('/admin', auth.isAuth, (req, res) => {
+  // .get('/admin', auth.isAuth, (req, res) => {
+  .get('/admin', (req, res) => {
     // res.send(req.user);
     renderPage('js/admin.js', req, res);
   })
