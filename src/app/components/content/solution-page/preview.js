@@ -4,7 +4,7 @@ export default class SolutionPreview extends React.Component {
   render() {
     return (
 
-      <div className="col-sm-6 col-md-6 col-lg-3 ">
+      <div className="col-sm-6 col-md-4 col-lg-3 ">
         <div className="card mb-4 box-shadow">
           <div className="card-body">
             <img src="img/cube.jpg" className="card-img-top img-responsive" alt="Responsive image"></img>

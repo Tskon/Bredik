@@ -1,10 +1,29 @@
 @import "../../bootstrap4";
+//@import "../../scss-bootstrap/bootstrap";
+//@import "../../scss-bootstrap/bootstrap-grid";
+//@import "../../scss-bootstrap/bootstrap-reboot";
 @import "variables";
 @import "bootstrap-theme";
 
 @import "header";
 @import "main-menu";
+@import "main-content";
+@import "footer";
 @import "mixins";
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../../fonts/Montserrat-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../../fonts/Montserrat-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
 
 main{
   color: $dark;
@@ -26,11 +45,6 @@ main{
     background-size: 100%;
     transform: scale(-1, 1)
   }*/
-}
-
-// Переопределила контейнер бутстрапа, а то был слишком маленький (960px)
-.container {
-  max-width: 1300px;
 }
 
 a{
