@@ -55,11 +55,19 @@ export default class Header extends React.Component {
     return (
       <div className="container">
         <section className='header row justify-content-center'>
-          <div className="col-sm-12 col-md-9 offset-md-1 header__text">
+          <div className="col-md-9 col-sm-8 header__text">
             <h1 className='header__project-name'><a href='#'>Bredik</a></h1>
             <h5 className='header__project-description'>Сборник готовых решений для разработчика</h5></div>
-          <div className="col-md-2 col-sm-6 header__login-btn-wrapper">
+          <div className="col-md-2 col-sm-2 header__login-btn-wrapper">
             {login}
+          </div>
+          <div className="col-md-2 col-sm-2 toggler-menu-align">
+            <nav className="navbar navbar-expand-md">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            </nav>
           </div>
         </section>
       </div>

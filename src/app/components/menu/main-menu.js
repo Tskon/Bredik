@@ -8,14 +8,14 @@ export default class Menu extends React.Component {
 
   render() {
     return (
-      <nav className="navbar main-menu navbar-expand-lg">
+      <nav className="navbar main-menu navbar-expand-md">
         <div className="container">
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          {/*<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                   aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </button>*/}
           <div className="collapse navbar-collapse" id="navbarCollapse">
-          <ul className="nav nav-tabs nav-justified">
+          <ul className="nav nav-tabs nav-justified navbar-nav mr-auto">
             <li className="nav-item">
               <Link className={"nav-link " + this.setActive("/")} to="/">HTML/CSS</Link>
             </li>

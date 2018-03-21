@@ -35,6 +35,17 @@
   margin-right: 40px;
 }
 
+.toggler-menu-align {
+  padding: 0;
+  nav {
+    padding: 0;
+  }
+  button {
+    padding: 0;
+    margin-top: 47px;
+  }
+}
+
 @media screen and (max-device-width: 600px) {
   .header__project-name a {
     font-size: 80px;
