@@ -3,8 +3,8 @@ const cheerio = require('cheerio');
 const cfg = require('../config/database');
 
 class PageRender {
-  constructor(bundle, req, res) {
-    const file = cfg.publicPath + 'index.html';
+  constructor(bundle, fileName, req, res) {
+    const file = cfg.publicPath + fileName;
     fs.readFile(file, (err, html) => {
       if(err) throw err;
       let $ = cheerio.load(html);
@@ -14,6 +14,6 @@ class PageRender {
   }
 }
 
-module.exports = (scriptName, req, res) => {
-  new PageRender(scriptName, req, res);
+module.exports = (scriptName, htmlFileName, req, res) => {
+  new PageRender(scriptName, htmlFileName, req, res);
 };

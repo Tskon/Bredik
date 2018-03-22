@@ -45,12 +45,11 @@ app
 
 app
   .get('/', (req, res) => {
-    renderPage('js/app.js', req, res);
+    renderPage('js/app.js', 'index.html', req, res);
   })
   // .get('/admin', auth.isAuth, (req, res) => {
   .get('/admin', (req, res) => {
-    // res.send(req.user);
-    renderPage('js/admin.js', req, res);
+    renderPage('js/admin.js', 'admin.html', req, res);
   })
   .get('/*', (req, res) => {
     res.redirect('/#' + req.url);
@@ -72,4 +71,3 @@ app
 app.listen(process.env.PORT || serverCfg.PORT);
 
 console.log('server was started: http://localhost:' + serverCfg.PORT);
-
