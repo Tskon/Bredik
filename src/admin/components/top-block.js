@@ -13,18 +13,18 @@ export default class TopBlock extends React.Component {
     this.login = this.login.bind(this);
   }
 
-  login(data){
+  login(data) {
     this.setState({
       isAuth: true,
       data: data
     })
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios
       .post('/get/user')
       .then((res) => {
-        if (res.data !== ''){
+        if (res.data !== '') {
           this.login(res.data);
         }
       })
@@ -35,8 +35,44 @@ export default class TopBlock extends React.Component {
 
   render() {
     return (
-      <div className={'top-block'}>
-        <nav className="navbar navbar-light bg-light">
+      <nav className={'top-block navbar navbar-expand'}>
+        <div className="be-navbar-header">
+          <a href="/" className="navbar-brand">логотип</a>
+        </div>
+        <div className="be-right-navbar">
+        <ul className="nav navbar-nav float-right be-user-nav">
+          <li className="nav-item dropdown">
+            {/*Сама аватарка при нажатии на которую выпадает меню*/}
+            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+               className="nav-link dropdown-toggle">
+              <img src="img/avatar-main.jpg" alt="Avatar"/>
+              <span className="user-name">Рыжий котец</span>
+            </a>
+            {/*Выпадающее меню с логином*/}
+            <div role="menu" className="dropdown-menu">
+              <div className="user-info">
+                <div className="user-name">Рыжий Котец</div>
+                <div className="user-position online">В сети</div>
+              </div>
+              /* Инфрмация о человеке, вес, рост, возраст */
+              <a href="#" className="dropdown-item">
+                <span className="icon mdi mdi-face"></span> Аккаунт
+              </a>
+              /* Настройки аккаунта */
+              <a href="#" className="dropdown-item">
+                <span className="icon mdi mdi-settings"></span> Settings
+              </a>
+              /* Инфрмация о человеке, вес, рост, возраст */
+              <a href="/logout" className="dropdown-item">
+                <span className="icon mdi mdi-power"></span> Выход
+              </a>
+            </div>
+          </li>
+        </ul>
+        </div>
+      </nav>
+      /*<div className="top-block">
+         <nav className="navbar navbar-light bg-light">
           <form className="form-inline">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -46,9 +82,7 @@ export default class TopBlock extends React.Component {
             <a className="flex-sm-fill text-sm-center nav-link" href="/logout">Exit</a>
           </nav>
         </nav>
-
-
-      </div>
+      </div>*/
     )
   }
 }
