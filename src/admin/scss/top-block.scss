@@ -1,21 +1,29 @@
 .top-block {
-  background-color: #F00 !important;
   border: 0;
   margin-bottom: 0;
   border-bottom: 1px solid #e6e5e5;
   padding: 0;
+
 }
 
-.be-navbar-header {
+.br-navbar-header {
   display: flex;
   width: 230px;
 }
 
-.be-right-navbar {
+.br-right-navbar {
   padding-right: 20px;
   width: calc(100% - 230px);
 }
 
-.be-user-nav {
+.br-user-nav {
   margin-right: 0;
+}
+
+.br-avatar-admin-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  border: 1px solid white;
+  box-shadow: 0 0 7px #666;
 }

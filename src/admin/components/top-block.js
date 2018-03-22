@@ -36,17 +36,16 @@ export default class TopBlock extends React.Component {
   render() {
     return (
       <nav className={'top-block navbar navbar-expand'}>
-        <div className="be-navbar-header">
+        <div className="br-navbar-header">
           <a href="/" className="navbar-brand">логотип</a>
         </div>
-        <div className="be-right-navbar">
-        <ul className="nav navbar-nav float-right be-user-nav">
+        <div className="br-right-navbar">
+        <ul className="nav navbar-nav float-right br-user-nav">
           <li className="nav-item dropdown">
             {/*Сама аватарка при нажатии на которую выпадает меню*/}
-            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-               className="nav-link dropdown-toggle">
-              <img src="img/avatar-main.jpg" alt="Avatar"/>
-              <span className="user-name">Рыжий котец</span>
+            <a href="#" data-toggle="dropdown" role="button" className="nav-link dropdown-toggle">
+              <img src="img/admin/avatar-main.jpg" alt="Avatar" className="br-avatar-admin-img"/>
+              <span className="br-user-name">Рыжий котец</span>
             </a>
             {/*Выпадающее меню с логином*/}
             <div role="menu" className="dropdown-menu">
@@ -54,15 +53,15 @@ export default class TopBlock extends React.Component {
                 <div className="user-name">Рыжий Котец</div>
                 <div className="user-position online">В сети</div>
               </div>
-              /* Инфрмация о человеке, вес, рост, возраст */
+              {/* Инфрмация о человеке, вес, рост, возраст */}
               <a href="#" className="dropdown-item">
                 <span className="icon mdi mdi-face"></span> Аккаунт
               </a>
-              /* Настройки аккаунта */
+              {/* Настройки аккаунта */}
               <a href="#" className="dropdown-item">
                 <span className="icon mdi mdi-settings"></span> Settings
               </a>
-              /* Инфрмация о человеке, вес, рост, возраст */
+              {/* Инфрмация о человеке, вес, рост, возраст */}
               <a href="/logout" className="dropdown-item">
                 <span className="icon mdi mdi-power"></span> Выход
               </a>
