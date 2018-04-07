@@ -2,11 +2,11 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {Redirect} from 'react-router'
 
-import HtmlCss from './solutions-list/html-css';
-import Javascript from './solutions-list/javascript';
-import Wordpress from './solutions-list/word-press';
-import Joomla from './solutions-list/joomla';
-import Drupal from './solutions-list/drupal';
+import HtmlCss from '~/app/layouts/solutions-list/html-css';
+import Javascript from '~/app/layouts/solutions-list/javascript';
+import Wordpress from '~/app/layouts/solutions-list/word-press';
+import Joomla from '~/app/layouts/solutions-list/joomla';
+import Drupal from '~/app/layouts/solutions-list/drupal';
 
 export default class Index extends React.Component {
   render() {

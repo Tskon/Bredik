@@ -2,20 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 // layouts
-import IndexContent from './index-content';
+import IndexContent from '~/app/layouts/index-content';
 
 // components
-import Header from '../components/header/header';
-import Menu from '../components/menu/main-menu';
-import Footer from '../components/footer/footer';
-
-// import {setAppState} from '../../redux/actions/app-state';
-
-// @connect((store) => {
-//   return {
-//     appState: store.appState
-//   }
-// })
+import Header from '~/app/layouts/components/header/header';
+import Menu from '~/app/layouts/components/menu/main-menu';
+import Footer from '~/app/layouts/components/footer/footer';
 
 export default class Index extends React.Component {
   render() {

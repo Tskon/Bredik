@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SolutionPagePreview from '../../components/content/solution-page/preview';
+import SolutionPagePreview from '~/app/components/content/solution-page/preview';
 
 export default class Wordpress extends React.Component {
   render() {

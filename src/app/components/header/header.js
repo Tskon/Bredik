@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // import {Link} from 'react-router-dom';
 
-import EnterButton from '../modals/login-modal';
+import EnterButton from '~/app/components/modals/login-modal';
 
 export default class Header extends React.Component {
   constructor() {
