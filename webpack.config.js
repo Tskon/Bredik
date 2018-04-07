@@ -86,6 +86,12 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['.js'],
+    alias: {
+      ['~']: path.resolve(__dirname, 'src')
+    }
+  },
   plugins: [
     new ExtractTextPlugin("../css/[name].css"),
     // new CleanWebpackPlugin(['dist']),
