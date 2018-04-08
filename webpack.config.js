@@ -94,7 +94,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("../css/[name].css"),
-    // new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin(
       [{from: './img', to: '../img'}, {from:'./index.html', to: '../'}, {from:'./admin.html', to: '../'}],
       {ignore: [{glob: 'svg/*'}]}
@@ -105,6 +104,9 @@ module.exports = {
 if (isProduction) {
   module.exports.plugins.push(
     new UglifyJSPlugin({sourceMap: true})
+  );
+  module.exports.plugins.push(
+    new CleanWebpackPlugin(['dist']),
   );
   module.exports.plugins.push(
     new ImageminPlugin({
