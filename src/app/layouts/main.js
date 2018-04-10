@@ -5,9 +5,9 @@ import {connect} from 'react-redux';
 import IndexContent from '~/app/layouts/index-content';
 
 // components
-import Header from '~/app/layouts/components/header/header';
-import Menu from '~/app/layouts/components/menu/main-menu';
-import Footer from '~/app/layouts/components/footer/footer';
+import Header from '~/app/components/header/header';
+import Menu from '~/app/components/menu/main-menu';
+import Footer from '~/app/components/footer/footer';
 
 export default class Index extends React.Component {
   render() {

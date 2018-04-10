@@ -1,8 +1,8 @@
 import React from 'react';
 
-import LeftBlock from '~/admin/components/left-block';
-import TopBlock from '~/admin/components/top-block';
-import ContentBlock from '~/admin/components/content-block';
+import LeftBlock from '~/app/components/admin/left-block';
+import TopBlock from '~/app/components/admin/top-block';
+import ContentBlock from '~/app/components/admin/content-block';
 
 export default class Index extends React.Component {
   render() {
