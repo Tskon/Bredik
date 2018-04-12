@@ -15,8 +15,7 @@ module.exports = {
   //basic path to project
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: ['./app/app.js', './app/scss/main.scss'],
-    admin: ['./admin/admin-app.js', './admin/scss/admin-main.scss']
+    app: ['./app/app.js', './app/scss/main.scss']
   },
   output: {
     filename: '[name].js',
@@ -95,7 +94,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin("../css/[name].css"),
     new CopyWebpackPlugin(
-      [{from: './img', to: '../img'}, {from:'./index.html', to: '../'}, {from:'./admin.html', to: '../'}],
+      [{from: './img', to: '../img'}, {from:'./index.html', to: '../'}],
       {ignore: [{glob: 'svg/*'}]}
     )
   ]
