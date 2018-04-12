@@ -36,7 +36,7 @@ app
     }),
     function (req, res) {
       // Authenticated successfully
-      res.redirect('/admin');
+      res.redirect('/');
     })
   .get('/logout', function (req, res) {
     req.logout();
@@ -45,11 +45,11 @@ app
 
 app
   .get('/', (req, res) => {
-    renderPage('js/app.js', 'index.html', req, res);
+    renderPage(req, res);
   })
   // .get('/admin', auth.isAuth, (req, res) => {
   .get('/admin', (req, res) => {
-    renderPage('js/admin.js', 'admin.html', req, res);
+    renderPage(req, res);
   })
   .get('/*', (req, res) => {
     res.redirect('/#' + req.url);
@@ -59,7 +59,6 @@ app
 // API
   app
     .post('/get/user', (req, res) => {
-      console.log('auth',req.isAuthenticated());
       if (req.isAuthenticated()){
         res.json(req.user);
       } else{

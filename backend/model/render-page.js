@@ -3,17 +3,17 @@ const cheerio = require('cheerio');
 const cfg = require('../config/database');
 
 class PageRender {
-  constructor(bundle, fileName, req, res) {
-    const file = cfg.publicPath + fileName;
+  constructor(req, res) {
+    const file = cfg.publicPath + 'index.html';
     fs.readFile(file, (err, html) => {
       if(err) throw err;
       let $ = cheerio.load(html);
-      $('body').append(`<script src="${bundle}"></script>`);
+      $('body').append(`<script src='js/app.js'></script>`);
       res.send($.html());
     })
   }
 }
 
-module.exports = (scriptName, htmlFileName, req, res) => {
-  new PageRender(scriptName, htmlFileName, req, res);
+module.exports = (req, res) => {
+  new PageRender(req, res);
 };
