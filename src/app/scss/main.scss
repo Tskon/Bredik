@@ -1,7 +1,4 @@
 @import "../../bootstrap4";
-//@import "../../scss-bootstrap/bootstrap";
-//@import "../../scss-bootstrap/bootstrap-grid";
-//@import "../../scss-bootstrap/bootstrap-reboot";
 @import "variables";
 @import "bootstrap-theme";
 
@@ -10,6 +7,8 @@
 @import "main-menu";
 @import "main-content";
 @import "footer";
+@import "solution-page";
+
 @import "mixins";
 
 @font-face {
