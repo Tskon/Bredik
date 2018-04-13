@@ -7,6 +7,7 @@ import Javascript from '~/app/layouts/solutions-list/javascript';
 import Wordpress from '~/app/layouts/solutions-list/word-press';
 import Joomla from '~/app/layouts/solutions-list/joomla';
 import Drupal from '~/app/layouts/solutions-list/drupal';
+import SolutionPage from '~/app/components/content/solution-page/solution-page';
 
 export default class Index extends React.Component {
   render() {
@@ -20,6 +21,7 @@ export default class Index extends React.Component {
           <Route path="/wp" component={Wordpress}/>
           <Route path="/joomla" component={Joomla}/>
           <Route path="/drupal" component={Drupal}/>
+          <Route path="/demo" component={SolutionPage}/>
         </Switch>
       </div>
     )

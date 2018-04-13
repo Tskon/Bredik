@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default class SolutionPreview extends React.Component {
   render() {
@@ -12,7 +13,9 @@ export default class SolutionPreview extends React.Component {
             </p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button type="button" className="btn btn-sm btn-outline-secondary">ДЕМО</button>
+                <Link to="/demo">
+                  <button type="button" className="btn btn-sm btn-outline-secondary">ДЕМО</button>
+                </Link>
                 <button type="button" className="btn btn-sm btn-outline-secondary">Скачать</button>
               </div>
               <small className="text-muted">JavaScript</small>
