@@ -9,8 +9,11 @@ const redusers = combineReducers({
 
 //middlewares
 import promise from 'redux-promise-middleware';
+import {createLogger} from 'redux-logger';
 
-const middleware = applyMiddleware(promise());
+const logger = createLogger();
+
+const middleware = applyMiddleware(promise(), logger);
 
 //create store
 const store = createStore(redusers, middleware);
