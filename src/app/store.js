@@ -1,7 +1,7 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 //redusers
-import {appState} from './redusers/app-state-reduser';
+import {appState} from '~/app/redusers/app-state-reduser';
 
 const redusers = combineReducers({
   appState: appState

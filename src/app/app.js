@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import store from '~/app/store';
-
-require('bootstrap');
 
 // Layouts
 import Main from '~/app/layouts/main';
