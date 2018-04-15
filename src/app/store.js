@@ -2,6 +2,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 //redusers
 import {getSolutions} from '~/app/redusers/solution-reduser';
+import {getUser} from '~/app/redusers/user-reducer'
 
 const redusers = combineReducers({
     getSolutions: getSolutions
