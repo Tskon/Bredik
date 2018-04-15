@@ -57,14 +57,17 @@ app
 
 
 // API
-  app
-    .post('/get/user', (req, res) => {
-      if (req.isAuthenticated()){
-        res.json(req.user);
-      } else{
-        res.send(null);
-      }
-    });
+app
+  .post('/get/user', (req, res) => {
+    if (req.isAuthenticated()) {
+      res.json(req.user);
+    } else {
+      res.send(null);
+    }
+  })
+  .post('/get/solutions', (req, res) => {
+    const something = require('./backend/model/solutions');
+  });
 
 
 app.listen(process.env.PORT || serverCfg.PORT);
