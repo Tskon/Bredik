@@ -12,10 +12,12 @@ import Footer from '~/app/components/footer/footer';
 
 // actions
 import {getUser} from '~/app/actions/user-actions';
+import {getSolutions} from '~/app/actions/solution-actions';
 
 class Index extends React.Component {
     componentDidMount() {
       this.props.dispatch(getUser());
+      this.props.dispatch(getSolutions());
     }
 
     render() {
