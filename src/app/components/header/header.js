@@ -2,8 +2,6 @@ import React from 'react';
 import axios from 'axios';
 // import {Link} from 'react-router-dom';
 
-import EnterButton from '~/app/components/modals/login-modal';
-
 export default class Header extends React.Component {
   constructor() {
     super(...arguments);
@@ -49,7 +47,7 @@ export default class Header extends React.Component {
         </div>
       );
     } else {
-      login = <EnterButton/>;
+      login = <a href="/auth/google">Google login</a>;
     }
 
     return (
