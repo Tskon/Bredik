@@ -4,7 +4,7 @@ export function getUser(state = {user: {}, isFulfilled: false}, action) {
       break;
     }
     case 'GET_USER_FULFILLED': {
-      state = {...state, user: action.payload, isFulfilled: true};
+      state = {...state, user: action.payload.data, isFulfilled: true};
       break;
     }
   }

@@ -3,44 +3,13 @@ import axios from 'axios';
 // import {Link} from 'react-router-dom';
 
 export default class Header extends React.Component {
-  constructor() {
-    super(...arguments);
-    this.state = {
-      isAuth: false,
-      data: ''
-    };
-
-    //binds
-     this.login = this.login.bind(this);
-  }
-
-  login(data){
-    this.setState({
-      isAuth: true,
-      data: data
-    })
-  }
-
-  componentDidMount(){
-    axios
-      .post('/get/user')
-      .then((res) => {
-        if (res.data !== ''){
-          this.login(res.data);
-        }
-      })
-      .catch((err) => {
-        console.log('Axios err in post request to /get/user', err)
-      });
-  }
-
   render() {
     let login;
-
-    if (this.state.isAuth) {
+    console.log(this.props.user);
+    if (this.props.user.user !== '') {
       login = (
         <div>
-          <h3>{this.state.data.name.givenName || this.state.data.displayName}</h3>
+          <h3>{this.props.user.user.givenName || this.props.user.user.displayName}</h3>
           <a href="/admin">Админ-панель</a>
           <br/>
           <a href="/logout">Выйти</a>

@@ -10,15 +10,18 @@ import Header from '~/app/components/header/header';
 import Menu from '~/app/components/menu/main-menu';
 import Footer from '~/app/components/footer/footer';
 
+// actions
+import {getUser} from '~/app/actions/user-actions';
+
 class Index extends React.Component {
     componentDidMount() {
-
+      this.props.dispatch(getUser());
     }
 
     render() {
         return (
             <div className="container-fluid">
-                <Header/>
+                <Header user={this.props.user}/>
                 <Menu path={window.location.pathname}/>
                 <IndexContent/>
                 <Footer/>
