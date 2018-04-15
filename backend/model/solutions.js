@@ -11,9 +11,9 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query(str, (err, rows, fields) => {
+connection.query(str, (err, rows) => {
   if (err) console.log(err);
-  console.log(rows, fields);
+  console.log('============rows=============', rows);
 });
 
 connection.end();
