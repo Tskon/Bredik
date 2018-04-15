@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 // layouts
 import IndexContent from '~/app/layouts/index-content';
@@ -9,15 +10,27 @@ import Header from '~/app/components/header/header';
 import Menu from '~/app/components/menu/main-menu';
 import Footer from '~/app/components/footer/footer';
 
-export default class Index extends React.Component {
-  render() {
-    return (
-      <div className="container-fluid">
-        <Header/>
-        <Menu path={window.location.pathname}/>
-        <IndexContent/>
-        <Footer/>
-      </div>
-    )
-  }
+class Index extends React.Component {
+    componentDidMount() {
+
+    }
+
+    render() {
+        return (
+            <div className="container-fluid">
+                <Header/>
+                <Menu path={window.location.pathname}/>
+                <IndexContent/>
+                <Footer/>
+            </div>
+        )
+    }
 }
+
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default withRouter(connect(mapStateToProps)(Index));
