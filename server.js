@@ -67,6 +67,7 @@ app
   })
   .post('/get/solutions', (req, res) => {
     const something = require('./backend/model/solutions');
+    res.send('');
   });
 
 
