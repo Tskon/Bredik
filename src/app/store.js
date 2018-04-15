@@ -1,10 +1,10 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 //redusers
-import {appState} from '~/app/redusers/solution-reduser';
+import {getSolutions} from '~/app/redusers/solution-reduser';
 
 const redusers = combineReducers({
-  appState: appState
+    getSolutions: getSolutions
 });
 
 //middlewares
