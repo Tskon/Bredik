@@ -68,7 +68,7 @@ app
         const solutions = require('./backend/model/solutions');
         solutions.then(
             result => {
-                res.send(result);
+                res.json(result);
             },
             err => {
                 console.log(err);

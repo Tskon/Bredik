@@ -10,7 +10,7 @@ export function getSolutions(state = {solutions: [], isFulfilled: false}, action
       state = {
         ...state,
         isFulfilled: true,
-        solutions: action.payload
+        solutions: action.payload.data
       };
       break;
     }
