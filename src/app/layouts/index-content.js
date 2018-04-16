@@ -29,7 +29,7 @@ class Index extends React.Component {
                  render={() => <SolutionsList title='Joomla' solutions={this.props.solutions.joomla}/>}/>
           <Route path="/drupal"
                  render={() => <SolutionsList title='Drupal' solutions={this.props.solutions.drupal}/>}/>
-          <Route path="/demo" component={SolutionPage}/>
+          <Route path="/demo/:section/:id" component={SolutionPage}/>
         </Switch>
       </div>
     )

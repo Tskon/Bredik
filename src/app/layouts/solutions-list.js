@@ -17,7 +17,7 @@ export default class SolutionsList extends React.Component {
       <div>
         <h1>{this.props.title}</h1>
         <div className="row">
-          {previews || 'empty section'}
+          {previews}
         </div>
       </div>
     )
