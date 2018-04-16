@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default class Preview extends React.Component {
   render() {
     let content;
-
+    console.log(this.props.data)
     if (this.props.data) {
       content = (
         <div>
@@ -21,7 +21,7 @@ export default class Preview extends React.Component {
             <img src="img/cube.jpg" className="card-img-top img-responsive" alt="Responsive image"/>
             {content}
             <div className="d-flex justify-content-between align-items-center">
-              <Link to="/demo">
+              <Link to={`/demo/${this.props.data['section-id']}/${this.props.data.id}`}>
                 <button type="button" className="btn btn-sm btn-outline-secondary">ДЕМО</button>
               </Link>
             </div>

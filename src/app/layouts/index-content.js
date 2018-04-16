@@ -4,11 +4,7 @@ import {Redirect, withRouter} from 'react-router';
 import {connect} from 'react-redux';
 import {getSolutions} from '~/app/actions/solution-actions';
 
-import HtmlCss from '~/app/layouts/solutions-list/html-css';
-import Javascript from '~/app/layouts/solutions-list/javascript';
-import Wordpress from '~/app/layouts/solutions-list/word-press';
-import Joomla from '~/app/layouts/solutions-list/joomla';
-import Drupal from '~/app/layouts/solutions-list/drupal';
+import SolutionsList from '~/app/layouts/solutions-list';
 import SolutionPage from '~/app/components/content/solution-page/solution-page';
 
 class Index extends React.Component {
@@ -23,11 +19,16 @@ class Index extends React.Component {
       <div className="container">
         {redirect}
         <Switch>
-          <Route exact path="/" render={() => <HtmlCss solutions={this.props.solutions.htmlCssJs}/>}/>
-          <Route path="/javascript" render={() => <Javascript solutions={this.props.solutions.javascript}/>}/>
-          <Route path="/wp" render={() => <Wordpress solutions={this.props.solutions.wordpress}/>}/>
-          <Route path="/joomla" render={() => <Joomla solutions={this.props.solutions.joomla}/>}/>
-          <Route path="/drupal" render={() => <Drupal solutions={this.props.solutions.drupal}/>}/>
+          <Route exact path="/"
+                 render={() => <SolutionsList title='HTML/CSS/JS' solutions={this.props.solutions.htmlCssJs}/>}/>
+          <Route path="/javascript"
+                 render={() => <SolutionsList title='Javascript' solutions={this.props.solutions.javascript}/>}/>
+          <Route path="/wp"
+                 render={() => <SolutionsList title='Wordpress' solutions={this.props.solutions.wordpress}/>}/>
+          <Route path="/joomla"
+                 render={() => <SolutionsList title='Joomla' solutions={this.props.solutions.joomla}/>}/>
+          <Route path="/drupal"
+                 render={() => <SolutionsList title='Drupal' solutions={this.props.solutions.drupal}/>}/>
           <Route path="/demo" component={SolutionPage}/>
         </Switch>
       </div>
