@@ -1,21 +1,25 @@
 const mysql = require('mysql');
 const serverCfg = require('../config/database');
-const str = 'select * from `admins`';
 
-const connection = mysql.createConnection({
-  host: serverCfg.dbHost,
-  user: serverCfg.dbUser,
-  password: serverCfg.dbPass,
-  database: serverCfg.dbName
-});
 
-connection.connect();
+module.exports = new Promise((resolve, reject) => {
+    const connection = mysql.createConnection({
+        host: serverCfg.dbHost,
+        user: serverCfg.dbUser,
+        password: serverCfg.dbPass,
+        database: serverCfg.dbName
+    });
 
-connection.query(str, (err, rows) => {
-  if (err) console.log(err);
-  console.log('============rows=============', rows);
-});
+    connection.connect();
 
-connection.end();
+    const str = "SELECT * FROM `solutions`";
 
-// module.exports = solutions;
+    connection.query(str, (err, rows) => {
+        if (err) reject(err);
+        resolve(rows);
+    });
+
+    connection.end();
+})
+
+
