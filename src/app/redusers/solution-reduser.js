@@ -20,7 +20,7 @@ export function getSolutions(state = {solutions: [], isFulfilled: false}, action
         wordpress: action.payload.data.filter((item) => {
           return item['section-id'] === 3
         }),
-        loomla: action.payload.data.filter((item) => {
+        joomla: action.payload.data.filter((item) => {
           return item['section-id'] === 4
         }),
         drupal: action.payload.data.filter((item) => {
