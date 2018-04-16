@@ -21,7 +21,9 @@ class Index extends React.Component {
       <div className="container">
         {redirect}
         <Switch>
-          <Route exact path="/" component={HtmlCss}/>
+          <Route exact path="/" component={HtmlCss} solutions={this.props.solutions.solutions.filter((item)=>{
+            item.id
+          })}/>
           <Route path="/javascript" component={Javascript}/>
           <Route path="/wp" component={Wordpress}/>
           <Route path="/joomla" component={Joomla}/>
