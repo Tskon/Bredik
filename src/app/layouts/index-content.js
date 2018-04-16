@@ -16,18 +16,17 @@ class Index extends React.Component {
     this.props.dispatch(getSolutions());
   }
   render() {
+    console.log('render sol')
     const redirect = (window.location.hash) ? <Redirect to={window.location.hash.slice(1)}/> : '';
     return (
       <div className="container">
         {redirect}
         <Switch>
-          <Route exact path="/" component={HtmlCss} solutions={this.props.solutions.solutions.filter((item)=>{
-            item.id
-          })}/>
-          <Route path="/javascript" component={Javascript}/>
-          <Route path="/wp" component={Wordpress}/>
-          <Route path="/joomla" component={Joomla}/>
-          <Route path="/drupal" component={Drupal}/>
+          <Route exact path="/" component={HtmlCss} solutions={this.props.solutions.htmlCssJs}/>
+          <Route path="/javascript" component={Javascript} solutions={this.props.solutions.javascript}/>
+          <Route path="/wp" component={Wordpress} solutions={this.props.solutions.wordpress}/>
+          <Route path="/joomla" component={Joomla} solutions={this.props.solutions.joomla}/>
+          <Route path="/drupal" component={Drupal} solutions={this.props.solutions.drupal}/>
           <Route path="/demo" component={SolutionPage}/>
         </Switch>
       </div>
