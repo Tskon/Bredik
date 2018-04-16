@@ -1,6 +1,8 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {Redirect} from 'react-router'
+import {Redirect, withRouter} from 'react-router';
+import {connect} from 'react-redux';
+import {getSolutions} from '~/app/actions/solution-actions';
 
 import HtmlCss from '~/app/layouts/solutions-list/html-css';
 import Javascript from '~/app/layouts/solutions-list/javascript';
@@ -9,7 +11,10 @@ import Joomla from '~/app/layouts/solutions-list/joomla';
 import Drupal from '~/app/layouts/solutions-list/drupal';
 import SolutionPage from '~/app/components/content/solution-page/solution-page';
 
-export default class Index extends React.Component {
+class Index extends React.Component {
+  componentDidMount(){
+    this.props.dispatch(getSolutions());
+  }
   render() {
     const redirect = (window.location.hash) ? <Redirect to={window.location.hash.slice(1)}/> : '';
     return (
@@ -27,3 +32,11 @@ export default class Index extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state){
+  return {
+    solutions: state.solutions
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(Index));
