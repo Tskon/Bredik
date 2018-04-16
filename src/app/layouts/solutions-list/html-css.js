@@ -1,21 +1,23 @@
 import React from 'react';
 
-import SolutionPagePreview from '~/app/components/content/solution-page/preview';
+import Preview from '~/app/components/content/solution-page/preview';
 
 export default class HtmlCss extends React.Component {
+
   render() {
+    console.log('html', this.props.solutions);
+    let previews = [];
+    if (this.props.solutions){
+      previews = this.props.solutions.map((item, i) => {
+        <Preview id={i} data={item}/>
+      })
+    }
+
     return (
       <div>
         <h1>HTML + CSS модули</h1>
         <div className="row">
-          <SolutionPagePreview id={1}/>
-          <SolutionPagePreview id={2}/>
-          <SolutionPagePreview id={3}/>
-          <SolutionPagePreview id={4}/>
-          <SolutionPagePreview id={5}/>
-          <SolutionPagePreview id={6}/>
-          <SolutionPagePreview id={7}/>
-          <SolutionPagePreview id={8}/>
+          {previews}
         </div>
       </div>
     )

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 export default class SolutionPreview extends React.Component {
   render() {
+    console.log(this.props.data)
     return (
       <div className="col-sm-6 col-md-4 col-lg-3 ">
         <div className="card mb-4 box-shadow">
