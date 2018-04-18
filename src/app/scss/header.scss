@@ -1,57 +1,10 @@
-.header {
-  padding-bottom: 25px;
-  background: url("../../img/svg/bredik.svg") no-repeat;
+.main-header{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-.header__project-name {
-  margin-bottom: -12px;
-  a {
-    font-size: 100px;
-  }
-}
-
-.header__project-description {
-  font-size: 18px;
-  min-width: 435px;
-  padding-left: 6px;
-}
-
-.header__login-btn-wrapper {
-  padding-top: 15px;
-  text-align: right;
-}
-
-.header__logo {
-  //background: url("../../img/svg/bredik.svg") no-repeat;
-}
-
-.header__text {
-  margin-top: 10px;
-  //text-align: center;
-}
-
-.btn-authorization-align {
-  margin-top: 30px;
-  margin-right: 40px;
-}
-
-.toggler-menu-align {
-  padding: 0;
-  nav {
-    padding: 0;
-  }
-  button {
-    padding: 0;
-    margin-top: 47px;
-  }
-}
-
-@media screen and (max-device-width: 600px) {
-  .header__project-name a {
-    font-size: 80px;
-  }
-  .header__project-description {
-    min-width: 0;
-    display: inline-block;
-  }
+.login-block{
+  justify-self: flex-end;
+  align-self: center;
 }
