@@ -5,14 +5,14 @@ export default class Header extends React.Component {
     let login;
     if (this.props.user.user !== '') {
       login = (
-        <div>
+        <div className="login-block">
           <h3>{this.props.user.user.givenName || this.props.user.user.displayName}</h3>
-          <a href="/admin">Админ-панель</a>
-          <a href="/logout">Выйти</a>
+          <a className="login-block__link" href="/admin">Админ-панель</a>
+          <a className="login-block__link" href="/logout">Выйти</a>
         </div>
       );
     } else {
-      login = <a  href="/auth/google">Google login</a>;
+      login = <a href="/auth/google">Google login</a>;
     }
 
     return (
@@ -21,9 +21,7 @@ export default class Header extends React.Component {
           <h1 className="title__name"><a href='/'>Bredik</a></h1>
           <p className="title__description">Сборник готовых решений для разработчика</p>
         </div>
-        <div className="login-block">
-          {login}
-        </div>
+        {login}
       </header>
     )
   }
