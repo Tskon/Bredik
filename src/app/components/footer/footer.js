@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default class Footer extends React.Component {
   render() {
@@ -7,12 +8,12 @@ export default class Footer extends React.Component {
         <div className = "footer-top">
           <nav className = "footer-top__nav">
             <ul className="footer-top__nav-list">
-              <li><a href='#'>Главная</a></li>
-              <li><a href='#'>HTML + CSS</a></li>
-              <li><a href='#'>JavaScript</a></li>
-              <li><a href='#'>WordPress</a></li>
-              <li><a href='#'>Joomla</a></li>
-              <li><a href='#'>Drupal</a></li>
+              <li><Link to='/'>Главная</Link></li>
+              <li><Link to='/'>HTML + CSS</Link></li>
+              <li><Link to='/javascript'>JavaScript</Link></li>
+              <li><Link to='/wp'>WordPress</Link></li>
+              <li><Link to='/joomla'>Joomla</Link></li>
+              <li><Link to='/drupal'>Drupal</Link></li>
             </ul>
           </nav>
         </div>

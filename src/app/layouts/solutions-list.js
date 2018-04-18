@@ -16,7 +16,7 @@ export default class SolutionsList extends React.Component {
     return (
       <div>
         <h1>{this.props.title}</h1>
-        <div className="row">
+        <div className="cards-list">
           {previews}
         </div>
       </div>
