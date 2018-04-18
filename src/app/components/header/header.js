@@ -3,7 +3,6 @@ import React from 'react';
 export default class Header extends React.Component {
   render() {
     let login;
-    console.log(this.props.user);
     if (this.props.user.user !== '') {
       login = (
         <div>
