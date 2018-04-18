@@ -3,6 +3,7 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 
 .title{
@@ -10,5 +11,12 @@
 }
 
 .login-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.login-block__link{
+  margin: 5px 0;
 }
