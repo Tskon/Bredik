@@ -1,13 +1,8 @@
 .main-header{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 20px;
-}
-
-.title{
-
+  text-align: center;
 }
 
 .login-block{
@@ -19,4 +14,27 @@
 
 .login-block__link{
   margin: 5px 0;
+}
+
+.login-block__login{
+  margin: auto;
+  padding: 10px;
+  border: $blue solid 1px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 300ms;
+  &:hover{
+    border-color: #eb3329;
+    background-color: #eb3329;
+    color: #fff;
+  }
+}
+
+@media (min-width: 650px){
+  .main-header{
+    grid-template-columns: 150px minmax(150px, auto) 150px;
+  }
+  .title{
+    grid-column-start: 2;
+  }
 }

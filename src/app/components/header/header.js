@@ -12,7 +12,11 @@ export default class Header extends React.Component {
         </div>
       );
     } else {
-      login = <a href="/auth/google">Google login</a>;
+      login = (
+        <div className="login-block">
+          <a className="login-block__login" href="/auth/google">Google login</a>
+        </div>
+      )
     }
 
     return (
