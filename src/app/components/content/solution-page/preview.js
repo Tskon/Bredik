@@ -6,9 +6,9 @@ export default class Preview extends React.Component {
     let content;
     if (this.props.data) {
       content = (
-        <div>
-          <p>{this.props.data.title}</p>
-          <p>{this.props.data.description}</p>
+        <div className="card__title-wrapper">
+          <h3 className="card__title">{this.props.data.title}</h3>
+          <p className="card__description">{this.props.data.description}</p>
         </div>
       )
     }
