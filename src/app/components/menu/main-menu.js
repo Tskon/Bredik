@@ -8,12 +8,18 @@ export default class Menu extends React.Component {
 
   toggleMenu() {
     const menu = document.querySelector('.sections-menu-burger');
+    const btn = document.querySelector('.burger-btn');
+
+    btn.classList.toggle('burger-btn_active');
     menu.classList.toggle('sections-menu-burger_active');
   }
 
   closeMenu(){
     const menu = document.querySelector('.sections-menu-burger');
-    menu.classList.remove('sections-menu-burger_active')
+    const btn = document.querySelector('.burger-btn');
+
+    menu.classList.remove('sections-menu-burger_active');
+    btn.classList.remove('burger-btn_active');
   }
 
   render() {
@@ -21,7 +27,7 @@ export default class Menu extends React.Component {
     if (this.props.burger)
       burgerBtn = <button className="burger-btn" onClick={(e) => {
         this.toggleMenu(e.target)
-      }} title={'Меню'}/>;
+      }} title={'Меню'}><span/></button>;
 
     return (
       <div>
