@@ -69,7 +69,7 @@ module.exports = {
 
       // fonts
       {
-        test : /\.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {
             loader: 'file-loader',
@@ -94,7 +94,11 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin("../css/[name].css"),
     new CopyWebpackPlugin(
-      [{from: './img', to: '../img'}, {from:'./index.html', to: '../'}],
+      [
+        {from: './img', to: '../img'},
+        {from: './index.html', to: '../'},
+        {from: './fonts', to: '../fonts'}
+      ],
       {ignore: [{glob: 'svg/*'}]}
     )
   ]
@@ -114,7 +118,7 @@ if (isProduction) {
   );
   module.exports.plugins.push(
     new webpack.LoaderOptionsPlugin({
-      minimize:true
+      minimize: true
     })
   );
 }

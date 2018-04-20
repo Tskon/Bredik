@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default class Header extends React.Component {
+
   render() {
     let login;
     if (this.props.user.user !== '') {
