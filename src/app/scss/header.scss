@@ -1,6 +1,6 @@
 .main-header{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax($minWidth, auto);
   padding: 20px;
   text-align: center;
 }

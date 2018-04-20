@@ -40,12 +40,19 @@ class Index extends React.Component {
   }
 
   render() {
-    if(this.isNeedBurger())
+    let header, menu;
+    if(this.state.isNeedBurger){
+      header = <Header user={this.props.user} menu={<Menu path={window.location.pathname} burger/>}/>;
+      menu = '';
+    }else{
+      header = <Header user={this.props.user}/>;
+      menu = <Menu path={window.location.pathname}/>;
+    }
 
     return (
       <div className="container-fluid">
-        <Header user={this.props.user}/>
-        <Menu path={window.location.pathname}/>
+        {header}
+        {menu}
         <IndexContent/>
         <Footer/>
       </div>
