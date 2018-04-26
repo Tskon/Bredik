@@ -13,7 +13,6 @@
     "button button button"
     "stack stack stack";
   grid-row-gap: 5px;
-
   width: 100%;
   background-color: $blue;
   color: $light;
@@ -51,7 +50,7 @@
   text-decoration: none;
   grid-area: button;
   &:hover{
-    background-color: $dark;
+    background-color: $light;
     color: $orange;
   }
 }
