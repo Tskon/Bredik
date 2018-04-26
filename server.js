@@ -79,4 +79,4 @@ app
 
 app.listen(process.env.PORT || serverCfg.PORT);
 
-console.log('server was started: http://localhost:' + serverCfg.PORT);
+console.log('server was started: http://localhost:' + (process.env.PORT || serverCfg.PORT));
