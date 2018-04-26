@@ -42,7 +42,7 @@
 }
 
 .card__link{
-  background-color: $light;
+  background-color: $orange;
   color: $dark;
   border-radius: 5px;
   width: 150px;
@@ -52,7 +52,7 @@
   grid-area: button;
   &:hover{
     background-color: $dark;
-    color: $light;
+    color: $orange;
   }
 }
 
