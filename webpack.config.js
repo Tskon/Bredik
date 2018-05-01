@@ -9,7 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-const isProduction = (process.env.NODE_ENV === 'production');
+const isProduction = (process.env.NODE_ENV === 'production ');
 
 module.exports = {
   //basic path to project
