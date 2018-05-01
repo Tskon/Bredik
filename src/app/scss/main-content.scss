@@ -41,7 +41,8 @@
 }
 
 .card__link{
-  background-color: $orange;
+  background-color: transparent;
+  border: 1px solid $orange;
   color: $light;
   border-radius: 5px;
   width: 150px;
