@@ -42,6 +42,9 @@
   border: none;
   background-color: $light;
   outline-color: transparent;
+  cursor: pointer;
+  transition: 300ms;
+  transition-property: background-color;
   &:before {
     display: inline-block;
     content: '';
@@ -71,10 +74,10 @@
     position: relative;
     top: -19px;
     transition: 300ms;
-    transition-delay: 300ms;
+    transition-delay: 300ms
   }
   &:hover{
-
+    background-color: $blue;
   }
 }
 
