@@ -121,4 +121,6 @@ if (isProduction) {
       minimize: true
     })
   );
+}else{
+  module.exports.watch = true;
 }
