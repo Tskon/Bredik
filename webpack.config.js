@@ -106,9 +106,6 @@ module.exports = {
 
 if (isProduction) {
   module.exports.plugins.push(
-    new UglifyJSPlugin({sourceMap: true})
-  );
-  module.exports.plugins.push(
     new CleanWebpackPlugin(['dist']),
   );
   module.exports.plugins.push(
