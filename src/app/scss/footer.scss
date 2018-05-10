@@ -1,8 +1,6 @@
 .footer {
-  //background: $dark;
-  //background: url("../../img/footer-cat.png") no-repeat;
+  //align-self: flex-end;
   min-height: 126px;
-  //background-size: 100%;
 }
 
 .footer-top {
@@ -10,8 +8,6 @@
   min-height: 90px;
   margin-top: 50px;
   display: flex;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 
 .footer-top__nav {
@@ -35,8 +31,6 @@
   background: $orange;
   min-height: 30px;
   display: flex;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
 .footer-bottom__copyright {
