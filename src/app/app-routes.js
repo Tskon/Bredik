@@ -9,11 +9,11 @@ import SolutionPage from '~/app/components/content/solution-page/solution-page';
 
 class Routes extends React.Component {
     componentDidMount() {
-        this.props.dispatch(getSolutions());
+        this.props.dispatch(getSolutions())
     }
 
     render() {
-        console.log('render routes')
+        console.log(this.props.solutions.javascript);
         return (
                 <Switch>
                     <Route exact path="/"
