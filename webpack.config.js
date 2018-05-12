@@ -15,7 +15,7 @@ module.exports = {
   //basic path to project
   context: path.resolve(__dirname, 'src'),
   entry: {
-    app: ['./app/app.js', './app/scss/main.scss']
+    app: ['./app/app.js', './scss/main.scss']
   },
   output: {
     filename: '[name].js',

@@ -1,7 +1,7 @@
 @import "~normalize.scss/normalize";
 @import "variables";
 
-@import "./admin/admin-main";
+@import "admin/admin-main";
 @import "header";
 @import "main-menu";
 @import "main-content";
@@ -12,14 +12,14 @@
 
 @font-face {
   font-family: 'Montserrat-Regular';
-  src: url('../../fonts/Montserrat-Regular.otf');
+  src: url('../fonts/Montserrat-Regular.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Montserrat-Light';
-  src: url('../../fonts/Montserrat-Light.otf');
+  src: url('../fonts/Montserrat-Light.otf');
   font-weight: 300;
   font-style: normal;
 }
