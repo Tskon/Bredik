@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import login from 'app/components/'
-
-export default class Menu extends React.Component {
+class Menu extends React.Component {
   setActive(href) {
     return (this.props.path === href) ? 'sections-menu__item_active' : '';
   }
@@ -60,9 +59,15 @@ export default class Menu extends React.Component {
           <Link className={"sections-menu__item " + this.setActive("/wp")} to="/wp">Wordpress</Link>
           <Link className={"sections-menu__item " + this.setActive("/joomla")} to="/joomla">Joomla</Link>
           <Link className={"sections-menu__item " + this.setActive("/drupal")} to="/drupal">Drupal</Link>
+          {login}
         </nav>
-        {login}
+
       </div>
     )
   }
 }
+export default connect((store)=>{
+  return {
+    user: store.user
+  }
+})(Menu);
