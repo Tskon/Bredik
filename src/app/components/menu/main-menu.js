@@ -30,23 +30,6 @@ class Menu extends React.Component {
         this.toggleMenu(e.target)
       }} title={'Меню'}><span/></button>;
 
-    let login;
-    if (this.props.user.user !== '') {
-      login = (
-        <div className="login-block">
-          <h3>{this.props.user.user.givenName || this.props.user.user.displayName}</h3>
-          <a className="login-block__link" href="/admin">Админ-панель</a>
-          <a className="login-block__link" href="/logout">Выйти</a>
-        </div>
-      );
-    } else {
-      login = (
-        <div className="login-block">
-          <a className="login-block__login" href="/auth/google">Google login</a>
-        </div>
-      )
-    }
-
     return (
       <div>
         {burgerBtn}
@@ -59,9 +42,8 @@ class Menu extends React.Component {
           <Link className={"sections-menu__item " + this.setActive("/wp")} to="/wp">Wordpress</Link>
           <Link className={"sections-menu__item " + this.setActive("/joomla")} to="/joomla">Joomla</Link>
           <Link className={"sections-menu__item " + this.setActive("/drupal")} to="/drupal">Drupal</Link>
-          {login}
-        </nav>
 
+        </nav>
       </div>
     )
   }
