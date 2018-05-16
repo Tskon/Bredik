@@ -38,14 +38,14 @@ html, body{
 main{
   color: $dark;
   padding-left: $leftSideWidth;
-  border: $orange 3px solid;
   margin: 0 auto;
 }
 
 .container-fluid{
+  border: $orange 3px solid;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 3px);
+  min-height: 100vh;
 }
 
 a{
