@@ -4,13 +4,6 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  background-color: $blue;
-  padding: 5px;
-  width: $leftSideWidth;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
   &:after {
     display: none;
   }
