@@ -4,10 +4,10 @@ import {withRouter} from 'react-router-dom'
 
 // layouts
 import IndexContent from '~/app/layouts/index-content';
+import LeftBlock from '~/app/layouts/left-block';
 
 // components
 import Header from '~/app/components/header/header';
-import Menu from '~/app/components/menu/main-menu';
 import Footer from '~/app/components/footer/footer';
 
 // actions
@@ -40,19 +40,17 @@ class Index extends React.Component {
   }
 
   render() {
-    let header, menu;
+    let header;
     if(this.state.isNeedBurger){
-      header = <Header user={this.props.user} menu={<Menu path={window.location.pathname} burger/>}/>;
-      menu = '';
+      header = <Header user={this.props.user} menu={<Menu path={window.location.pathname} burger/>}/>;menu = '';
     }else{
       header = <Header user={this.props.user}/>;
-      menu = <Menu path={window.location.pathname}/>;
     }
 
     return (
       <div className="container-fluid">
         {header}
-        {menu}
+        <LeftBlock/>
         <IndexContent/>
         <Footer/>
       </div>

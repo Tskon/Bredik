@@ -21,7 +21,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/js'),
     publicPath: "../"
   },
-  devtool: (isProduction) ? '' : 'inline-source-map',
+  // devtool: (isProduction) ? '' : 'inline-source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"},

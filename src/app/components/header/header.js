@@ -8,7 +8,6 @@ export default class Header extends React.Component {
 
     return (
       <header className="main-header">
-        {menu}
         <div className="title">
           <h1 className="title__name"><a href='/'>Bredik</a></h1>
           <p className="title__description">Сборник готовых решений для разработчика</p>

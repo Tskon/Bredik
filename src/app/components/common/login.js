@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { getUser } from "../../redusers/user-reducer";
 
 class Login extends React.Component {
   render(){
@@ -23,3 +25,4 @@ class Login extends React.Component {
   }
 }
 
+export default connect((state)=>{return {user: state.user}})(Login);
