@@ -17,8 +17,6 @@ class SolutionPage extends React.Component {
   findCurrentSolution() {
     const currentSolutionCount = document.location.pathname.split('/').slice(-2);
     this.props.solutions.forEach((item) => {
-      // console.log('count',currentSolutionCount[ 0 ])
-      // console.log('item',item)
       if (+currentSolutionCount[ 0 ] === item[ 'section-id' ] && +currentSolutionCount[ 1 ] === item.id) {
         return item;
       }
