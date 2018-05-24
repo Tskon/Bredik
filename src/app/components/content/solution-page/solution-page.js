@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 class SolutionPage extends React.Component {
-  constructor() {
-    super(...arguments);
+  constructor(props) {
+    super(props);
     this.findCurrentSolution = this.findCurrentSolution.bind(this);
     this.solutionsList = {
       1: this.props.solutions.htmlCssJs,
