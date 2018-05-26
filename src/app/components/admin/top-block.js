@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 
 export default class TopBlock extends React.Component {
-  constructor() {
-    super(...arguments);
+  constructor(props) {
+    super(props);
     this.state = {
       isAuth: false,
       data: ''
