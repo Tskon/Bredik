@@ -24,6 +24,7 @@ class Menu extends React.Component {
   }
 
   render() {
+    console.log('test for git');
     let burgerBtn;
     if (this.props.burger)
       burgerBtn = <button className="burger-btn" onClick={(e) => {
