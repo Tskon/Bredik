@@ -15,5 +15,3 @@
 <br>
 </body>
 </html>
-<?php
-phpinfo();
