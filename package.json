@@ -1,0 +1,31 @@
+{
+  "name": "bredik",
+  "version": "1.0.0",
+  "description": "From developers for developers",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "webpack": "^4.15.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack --mode --watch development",
+    "prod": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tskon/Bredik.git"
+  },
+  "keywords": [
+    "Coders",
+    "blog"
+  ],
+  "author": "Tskon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tskon/Bredik/issues"
+  },
+  "homepage": "https://github.com/Tskon/Bredik#readme"
+}
