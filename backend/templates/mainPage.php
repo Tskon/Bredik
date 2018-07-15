@@ -8,8 +8,9 @@
   <title>Document</title>
 </head>
 <body>
-<h1>Bredik</h1>
-<p>test on virtual machine</p>
+<main id="mainApp">
+
+</main>
 <script src="app/main.js"></script>
 </body>
 </html>
