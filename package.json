@@ -6,7 +6,8 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "webpack": "^4.15.1"
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -14,7 +15,7 @@
     "babel-preset-env": "^1.7.0"
   },
   "scripts": {
-    "dev": "webpack --mode --watch development",
+    "dev": "webpack --watch --mode development",
     "prod": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

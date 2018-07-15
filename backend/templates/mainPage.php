@@ -10,8 +10,6 @@
 <body>
 <h1>Bredik</h1>
 <p>test on virtual machine</p>
-<br>
-<br>
-<br>
+<script src="app/main.js"></script>
 </body>
 </html>
