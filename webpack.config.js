@@ -5,7 +5,8 @@ module.exports = {
         path: path.resolve(__dirname, 'public'),
         filename: 'app/main.js'
     },
-    module: {
+  devtool: "eval-source-map",
+  module: {
         rules: [
             {
                 test: /\.jsx?$/,

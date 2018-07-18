@@ -1,3 +1,7 @@
-import app from './app.js';
+import React from 'react';
+import ReactDom from 'react-dom';
 
-app.render();
+import Header from './common/blocks/header';
+
+ReactDom.render(<Header/>, document.getElementById('mainApp'));
+

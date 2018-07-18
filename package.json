@@ -4,6 +4,7 @@
   "description": "From developers for developers",
   "main": "webpack.config.js",
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",
