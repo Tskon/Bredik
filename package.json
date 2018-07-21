@@ -4,20 +4,20 @@
   "description": "From developers for developers",
   "main": "webpack.config.js",
   "dependencies": {
-    "babel-preset-react": "^6.24.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8"
+    "redux": "^4.0.0"
   },
   "devDependencies": {
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-env": "^1.7.0"
   },
   "scripts": {

@@ -6,7 +6,9 @@ import Header from '../common/blocks/header';
 
 export default (
   <BrowserRouter>
-    <Route path='/' component={Header}/>
-    <Route path='/' component={Header}/>
+    <div>
+      <Route path='/' component={Header}/>
+      <Route path='/' component={Header}/>
+    </div>
   </BrowserRouter>
 )
