@@ -4,6 +4,7 @@
   "description": "From developers for developers",
   "main": "webpack.config.js",
   "dependencies": {
+
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -16,7 +17,7 @@
     "webpack-cli": "^3.0.8",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
-    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-env": "^1.7.0"
   },
