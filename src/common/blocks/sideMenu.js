@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SideMenu extend React.Component{
+class SideMenu extends React.Component{
   render(){
     return (
       <ul>
