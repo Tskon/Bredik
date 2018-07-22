@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<body id="mainApp">
-
+<body>
+<div id="mainApp"/>
 <script src="app/main.js"></script>
 </body>
 </html>

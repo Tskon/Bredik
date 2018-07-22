@@ -4,7 +4,6 @@
   "description": "From developers for developers",
   "main": "webpack.config.js",
   "dependencies": {
-
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -13,13 +12,21 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8",
+    "autoprefixer": "^9.0.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "mini-css-extract-plugin": "^0.4.1",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
   },
   "scripts": {
     "dev": "webpack --watch --mode development",
