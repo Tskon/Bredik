@@ -6,10 +6,10 @@ import React from 'react';
 class IndexPage extends React.Component{
   render(){
     return (
-      <div className="container">
+      <main className="container">
         <Header/>
         <SideMenu/>
-      </div>
+      </main>
     )
   }
 }
