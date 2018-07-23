@@ -1,19 +1,30 @@
+*, *:after, *:before{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+
 .container{
   display: grid;
   grid-template-columns: 10rem auto;
-  grid-template-rows: 10rem auto 10rem;
+  grid-template-rows: 10rem calc(100vh - 20rem) 10rem;
   grid-template-areas:
-          "sideMenu header"
-          "sideMenu content"
+          "sideBar header"
+          "sideBar content"
           "footer footer";
 }
 
 .mainHeader{
   grid-area: header;
+  text-align: center;
 }
 
-.sideMenu{
-  grid-area: sideMenu;
+.sideBar{
+  grid-area: sideBar;
+  background-color: darkgreen;
+  color: white;
+  border-right: 2px solid black;
 }
 
 .content{
