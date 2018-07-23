@@ -51,7 +51,7 @@ module.exports = {
         })
       },
       {
-        test: /.\css$/,
+        test: /.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -64,7 +64,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name]Bundle.css",
+      filename: "css/[name]Bundle.css",
     }),
     new CopyWebpackPlugin([{ from: './src/index.php', to: 'index.php' }], {})
   ],
