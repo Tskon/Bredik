@@ -11,3 +11,5 @@ class leftBox extends React.Component{
     );
   }
 }
+
+export default leftBox;
