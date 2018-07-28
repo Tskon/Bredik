@@ -3,7 +3,7 @@ import React from 'react';
 class SideMenu extends React.Component{
   render(){
     return (
-      <div className="sideBar">
+      <div>
         <ul className="sideMenu">
           <li>Первая статья</li>
           <li>Вторая статья</li>
