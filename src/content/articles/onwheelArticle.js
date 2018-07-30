@@ -25,7 +25,27 @@ class OnwheelArticle extends React.Component {
         </section>
         <section>
           <h2>Событие обработки скролла</h2>
+          <code>
+            {`
+            onWheel(e) {
+              e.preventDefault();        // запрещаем стандартное пролистывание страницы
 
+              if (e.deltaY > 0) {        // определяем в какую сторону прокручено колесико
+                this.currentPosition++;
+              } else {
+                this.currentPosition--;
+              }
+
+              // проверяем не уперлись ли в начало или конец страницы
+              if (this.currentPosition === this.slidesList.length) this.currentPosition = this.slidesList.length - 1;
+              if (this.currentPosition < 0) this.currentPosition = 0;
+
+              // тригерим событие скроллинга к указанному слайду
+              this.changeSlide(this.currentPosition);
+            }
+            `}
+
+          </code>
         </section>
       </article>
     )
