@@ -8,8 +8,8 @@ import Article1 from 'content/articles/onwheelArticle';
 export default (
   <BrowserRouter>
     <div>
-      <Route exec={true} path='/' component={IndexPage}/>
       <Route path='/article' component={Article1}/>
+      <Route exec={true} path='/' component={IndexPage}/>
     </div>
   </BrowserRouter>
 )
