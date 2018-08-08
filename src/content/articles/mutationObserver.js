@@ -30,8 +30,8 @@ class MutationObserverArticle extends React.Component{
             Мы устанавливаем на наш контейнер MutationObserver, который следит за тем что нам интересно, в нашем случае
             это деревья элементов детей и потомков (потомки - это дети детей). Таким образом мы поймем что скрипт рендерит
             код в наш контейнер. При желании можно наблюдать за атрибутами, текстовым наполнением или за конкретными
-            атрибутами, а не завсеми и даже получать старые значения! Пример использования взят с
-            <a href="https://developer.mozilla.org/ru/docs/Web/API/MutationObserver" target="_blank">MDN</a>
+            атрибутами, а не завсеми и даже получать старые значения! Пример использования взят
+            с <a href="https://developer.mozilla.org/ru/docs/Web/API/MutationObserver" target="_blank">MDN</a>.
           </p>
           <code>
             {`
