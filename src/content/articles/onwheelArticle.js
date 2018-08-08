@@ -25,7 +25,7 @@ class OnwheelArticle extends React.Component {
         </section>
         <section>
           <h2>Событие обработки скролла</h2>
-          <code>
+          <pre>
             {`
             onWheel(e) {
               e.preventDefault();        // запрещаем стандартное пролистывание страницы
@@ -44,7 +44,7 @@ class OnwheelArticle extends React.Component {
               this.changeSlide(this.currentPosition);
             }
             `}
-          </code>
+          </pre>
           <p>Проверяем - теперь можно колесиком листать слайды.</p>
           <p>
             Однако при тестировании на ноутбуке получаем неожиданный результат - даже при небольшом пролистывании в

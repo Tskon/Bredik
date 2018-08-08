@@ -33,7 +33,7 @@ class MutationObserverArticle extends React.Component{
             атрибутами, а не завсеми и даже получать старые значения! Пример использования взят
             с <a href="https://developer.mozilla.org/ru/docs/Web/API/MutationObserver" target="_blank">MDN</a>.
           </p>
-          <code>
+          <pre>
             {`
               // выбираем целевой элемент
               var target = document.getElementById('some-id');
@@ -54,7 +54,7 @@ class MutationObserverArticle extends React.Component{
               // позже можно остановить наблюдение
               observer.disconnect();
             `}
-          </code>
+          </pre>
         </section>
       </article>
     )
