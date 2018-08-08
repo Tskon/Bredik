@@ -60,3 +60,5 @@ class MutationObserverArticle extends React.Component{
     )
   }
 }
+
+export default MutationObserverArticle;
