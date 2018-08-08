@@ -6,8 +6,8 @@ class SideMenu extends React.Component{
     return (
       <div>
         <ul className="sideMenu">
-          <li><Link to='/article'>onWheel</Link></li>
-          <li>Вторая статья</li>
+          <li><Link to='/article1'>onWheel</Link></li>
+          <li><Link to='/article2'>onWheel</Link></li>
           <li>Третья статья</li>
         </ul>
       </div>
