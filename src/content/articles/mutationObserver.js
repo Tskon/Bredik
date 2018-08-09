@@ -1,8 +1,8 @@
 import React from 'react';
 
-class MutationObserverArticle extends React.Component{
-  render(){
-    return(
+class MutationObserverArticle extends React.Component {
+  render() {
+    return (
       <article>
         <h1>MutationObserver спешит на помощь</h1>
         <section>
@@ -28,7 +28,8 @@ class MutationObserverArticle extends React.Component{
           <h2>Mutation observer</h2>
           <p>
             Мы устанавливаем на наш контейнер MutationObserver, который следит за тем что нам интересно, в нашем случае
-            это деревья элементов детей и потомков (потомки - это дети детей). Таким образом мы поймем что скрипт рендерит
+            это деревья элементов детей и потомков (потомки - это дети детей). Таким образом мы поймем что скрипт
+            рендерит
             код в наш контейнер. При желании можно наблюдать за атрибутами, текстовым наполнением или за конкретными
             атрибутами, а не завсеми и даже получать старые значения! Пример использования взят
             с <a href="https://developer.mozilla.org/ru/docs/Web/API/MutationObserver" target="_blank">MDN</a>.
@@ -55,6 +56,13 @@ class MutationObserverArticle extends React.Component{
               observer.disconnect();
             `}
           </pre>
+        </section>
+        <section>
+          <h2>Заключение</h2>
+          <p>
+            Mutation Observer помогает нам полноценно без страшных костылей позаботиться о правильном поведении
+            сторонних модулей, даже если авторы не постарались предоставить нужные нам рычаги в API
+          </p>
         </section>
       </article>
     )
