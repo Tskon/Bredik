@@ -2309,3 +2309,13 @@ Prism.plugins.toolbar.registerButton('show-language', function(env) {
 
 })();
 
+Prism.plugins.NormalizeWhitespace.setDefaults({
+  'remove-trailing': true,
+  'remove-indent': true,
+  'left-trim': true,
+  'right-trim': true,
+  'break-lines': 80,
+  'indent': 2,
+  'remove-initial-line-feed': false,
+  'spaces-to-tabs': 2
+});
