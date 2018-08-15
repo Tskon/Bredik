@@ -25,7 +25,7 @@ class OnwheelArticle extends React.Component {
         </section>
         <section>
           <h2>Событие обработки скролла</h2>
-          <pre><code className="language-js">
+          <pre><code className="line-numbers language-js">
             {`
             onWheel(e) {
               e.preventDefault();        // запрещаем стандартное пролистывание страницы
