@@ -3,15 +3,24 @@ import {Route, Redirect} from 'react-router-dom';
 import {BrowserRouter} from 'react-router-dom'
 
 import IndexPage from 'layouts/indexPage';
-import Article1 from 'content/articles/onwheelArticle';
-import Article2 from 'content/articles/mutationObserver';
+import OnWheelArticle from 'content/articles/onwheelArticle';
+import MutationObserverArticle from 'content/articles/mutationObserver';
 
 export default (
   <BrowserRouter>
     <div>
-      <Route path='/article1' component={Article1}/>
-      <Route path='/article2' component={Article2}/>
-      <Route exec={true} path='/' component={IndexPage}/>
+      <Route exact path='/' component={IndexPage}/>
+      {/*<Route path='/article1' component={Article1}/>*/}
+      <Route path='/article1' render={() => { return setIndexContent(<OnWheelArticle/>) }}/>
+      <Route path='/article2' render={() => { return setIndexContent(<MutationObserverArticle/>) }}/>
     </div>
   </BrowserRouter>
-)
+);
+
+function setIndexContent(el) {
+  return (
+    <IndexPage>
+      {el}
+    </IndexPage>
+  );
+}
