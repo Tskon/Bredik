@@ -20,7 +20,9 @@ export default (
 function setIndexContent(el) {
   return (
     <IndexPage>
-      {el}
+      <div className="container">
+        {el}
+      </div>
     </IndexPage>
   );
 }
