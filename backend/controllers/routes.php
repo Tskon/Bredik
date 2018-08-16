@@ -1,11 +1,15 @@
 <?php
-require_once $PATH . '/models/general.php';
+require_once $PATH_B . '/models/general.php';
 
 
 $uri = $_SERVER['REQUEST_URI'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-
+    switch ($uri){
+        case 'artticle-get-list':
+            echo json_encode($articles);
+            exit;
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET'){
@@ -14,6 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET'){
       print 'login page';
       break;
     default:
-      renderPage($PATH . '/templates/mainPage.php');
+      renderPage($PATH_B . '/templates/mainPage.php');
   }
 }
