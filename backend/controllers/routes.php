@@ -1,7 +1,6 @@
 <?php
 require_once $PATH_B . '/models/general.php';
 
-
 $uri = $_SERVER['REQUEST_URI'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
