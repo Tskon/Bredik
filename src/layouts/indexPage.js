@@ -8,11 +8,15 @@ import Header from 'common/blocks/header';
 import 'vendor/prism';
 
 class IndexPage extends React.Component{
+  componentDidMount(){
+    Prism.highlightAll();
+  }
   render(){
     return (
       <main className="container">
         <Header/>
         <LeftBox/>
+        {this.props.children}
         <Footer/>
       </main>
     )
