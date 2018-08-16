@@ -10,7 +10,6 @@ export default (
   <BrowserRouter>
     <div>
       <Route exact path='/' component={IndexPage}/>
-      {/*<Route path='/article1' component={Article1}/>*/}
       <Route path='/article1' render={() => { return setIndexContent(<OnWheelArticle/>) }}/>
       <Route path='/article2' render={() => { return setIndexContent(<MutationObserverArticle/>) }}/>
     </div>
@@ -20,7 +19,7 @@ export default (
 function setIndexContent(el) {
   return (
     <IndexPage>
-      <div className="container">
+      <div className="content">
         {el}
       </div>
     </IndexPage>
