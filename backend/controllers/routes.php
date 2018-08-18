@@ -6,7 +6,7 @@ $uri = $_SERVER['REQUEST_URI'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     switch ($uri){
         case 'artticle-get-list':
-            echo json_encode($articles);
+            echo json_encode(getArticlesList());
             exit;
     }
 }
