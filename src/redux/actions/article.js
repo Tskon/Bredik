@@ -1,13 +1,14 @@
 export function getArticlesList() {
+  const myInit = {
+    method: 'POST',
+    cache: 'default'
+  };
 
-  fetch('/artticle-get-list').then(resp => {
-    const contentType = resp.headers.get("content-type");
-    // if(contentType && contentType.includes("application/json")) {
-      return resp.json();
-    // }
-    throw new TypeError("Oops, we haven't got JSON!");
+  fetch('/article-get-list', myInit).then(resp => {
+    return resp.json();
+
   }).then(json => {
-    console.log(JSON.parse(json))
+    console.log(json)
   });
 
   return {
