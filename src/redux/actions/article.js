@@ -1,17 +1,17 @@
+import utils from 'service/utils';
+
 export function getArticlesList() {
-  const myInit = {
-    method: 'POST',
-    cache: 'default'
-  };
+  return (dispatch) => {
+    utils.post('/article-get-list', (resp) => {
+      dispatch(getArticlesListSuccess(resp))
+    });
+  }
 
-  fetch('/article-get-list', myInit).then(resp => {
-    return resp.json();
+}
 
-  }).then(json => {
-    console.log(json)
-  });
-
+function getArticlesListSuccess(data) {
   return {
-    type: "GET_ARTICLES_LIST"
+    type: "GET_ARTICLES_LIST",
+    data
   }
 }
