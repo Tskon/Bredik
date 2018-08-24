@@ -38,6 +38,7 @@ body{
 .footer{
   grid-area: footer;
   background-color: darkgrey;
+  color: #fff;
 }
 
 @import './vendor/prism.scss';
