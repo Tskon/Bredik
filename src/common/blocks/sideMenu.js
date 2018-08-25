@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {getArticlesList} from 'redux/actions/article';
+import store from 'redux/store';
 
 class SideMenu extends React.Component{
   render(){
-    getArticlesList();
+    store.dispatch(getArticlesList());
     return (
       <div>
         <ul className="sideMenu">
