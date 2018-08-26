@@ -1,17 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {getArticlesList} from 'redux/actions/article';
-import store from 'redux/store';
+import {connect} from 'react-redux';
+// import store from 'redux/store';
 
 class SideMenu extends React.Component{
+  componentDidMount(){
+    this.props.dispatch(getArticlesList());
+  }
+
   render(){
-    store.dispatch(getArticlesList());
     return (
       <div>
         <ul className="sideMenu">
-          <li><Link to='/article1'>onWheel</Link></li>
-          <li><Link to='/article2'>Mutation Observer</Link></li>
-          <li>Третья статья</li>
+          {this.props.articlesList && this.props.articlesList.map((article)=>{
+            const articleName = article.split('.')[0];
+            return <li><Link to={articleName}>{articleName}</Link></li>
+          })}
         </ul>
       </div>
 
@@ -19,4 +24,8 @@ class SideMenu extends React.Component{
   }
 }
 
-export default SideMenu;
+export default connect((store)=>{
+  return {
+    articlesList: store.article.articlesList,
+  }
+})(SideMenu);
