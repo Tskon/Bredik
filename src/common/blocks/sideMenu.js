@@ -1,25 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {getArticlesList} from 'redux/actions/article';
 import {connect} from 'react-redux';
-// import store from 'redux/store';
 
 class SideMenu extends React.Component{
-  componentDidMount(){
-    this.props.dispatch(getArticlesList());
-  }
-
   render(){
     return (
       <div>
         <ul className="sideMenu">
-          {this.props.articlesList && this.props.articlesList.map((article)=>{
+          {this.props.articlesList && this.props.articlesList.map((article, i)=>{
             const articleName = article.split('.')[0];
-            return <li><Link to={articleName}>{articleName}</Link></li>
+            return <li key={'article_' + i}><Link to={articleName}>{articleName}</Link></li>
           })}
         </ul>
       </div>
-
     )
   }
 }
