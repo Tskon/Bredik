@@ -6,12 +6,11 @@ export function getArticlesList() {
       dispatch(getArticlesListSuccess(resp))
     });
   }
-
 }
 
 function getArticlesListSuccess(data) {
   return {
-    type: "GET_ARTICLES_LIST",
+    type: 'GET_ARTICLES_LIST_SUCCESS',
     data
-  }
+  };
 }
