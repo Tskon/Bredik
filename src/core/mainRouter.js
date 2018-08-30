@@ -25,11 +25,12 @@ class MainRouter extends React.Component {
   }
 
   componentDidUpdate(){
-    if (this.props.articlesList){
-      this.props.articlesList.forEach((article) => {
-        import('content/articles/' + article).then(Component => {
-          console.log(123)
-          console.log('sdsds',Component)
+    if (this.props.articlesList && !this.state.articleComponents.length){
+      console.log('content/articles/mutationObserver.js')
+      this.props.articlesList.forEach(article => {
+        const url = `content/articles/${article}`;
+        console.log(url === 'content/articles/mutationObserver.js')
+        import('content/articles/mutationObserver.js').then(Component => {
           this.setState({
             articleComponents: [...this.state.articleComponents, Component]
           })
@@ -39,27 +40,24 @@ class MainRouter extends React.Component {
   }
 
   render() {
-    console.log(this.props.articlesList, this.state.articleComponents)
+    console.log(this.state.articleComponents)
     return (
       <BrowserRouter>
         <div>
           <Route exact path='/' component={IndexPage}/>
-          {this.props.articlesList && this.props.articlesList.map((article, i) => {
-            const articleName = article.split('.')[0];
-            console.log(articleName)
-            return <Route path={'/' + articleName} key={'route_' + i} render={() => {
-              const Component = Loadable({
-                loader: () => import('../content/articles/onwheelArticle'),
-                loading: () => {return <div>Loading...</div>},
-              })
-              return this.setIndexContent(<Component/>);
+          {this.state.articleComponents && this.state.articleComponents.map((article, i) => {
+            console.log('/' + this.props.articlesList[i].split('.')[0])
+            return <Route path={'/' + this.props.articlesList[i].split('.')[0]} key={'route_' + i} render={() => {
+              //todo решить проблему с роутами
+              // const Component = Loadable({
+              //   loader: () => import('../content/articles/onwheelArticle'),
+              //   loading: () => {return <div>Loading...</div>},
+              // })
+              return this.setIndexContent(this.state.articleComponents);
             }}/>
           })}
           {/*<Route path='/article1' render={() => {*/}
           {/*return this.setIndexContent(<OnWheelArticle/>)*/}
-          {/*}}/>*/}
-          {/*<Route path='/article2' render={() => {*/}
-          {/*return this.setIndexContent(<MutationObserverArticle/>)*/}
           {/*}}/>*/}
         </div>
       </BrowserRouter>
