@@ -48,7 +48,7 @@ class MainRouter extends React.Component {
           {this.state.articleComponents && this.state.articleComponents.map((article, i) => {
             console.log('/' + this.props.articlesList[i].split('.')[0])
             return <Route path={'/' + this.props.articlesList[i].split('.')[0]} key={'route_' + i} render={() => {
-              //todo решить проблему с роутами
+              //todo решить проблему с роутами Objects are not valid as a React child
               // const Component = Loadable({
               //   loader: () => import('../content/articles/onwheelArticle'),
               //   loading: () => {return <div>Loading...</div>},
@@ -72,7 +72,7 @@ class MainRouter extends React.Component {
     return (
       <IndexPage>
         <div className="content">
-          {el}
+
         </div>
       </IndexPage>
     );
