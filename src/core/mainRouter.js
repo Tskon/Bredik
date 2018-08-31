@@ -26,10 +26,8 @@ class MainRouter extends React.Component {
 
   componentDidUpdate(){
     if (this.props.articlesList && !this.state.articleComponents.length){
-      console.log('content/articles/mutationObserver.js')
       this.props.articlesList.forEach(article => {
         const url = `content/articles/${article}`;
-        console.log(url === 'content/articles/mutationObserver.js')
         import('content/articles/mutationObserver.js').then(Component => {
           this.setState({
             articleComponents: [...this.state.articleComponents, Component]
@@ -46,7 +44,6 @@ class MainRouter extends React.Component {
         <div>
           <Route exact path='/' component={IndexPage}/>
           {this.state.articleComponents && this.state.articleComponents.map((article, i) => {
-            console.log('/' + this.props.articlesList[i].split('.')[0])
             return <Route path={'/' + this.props.articlesList[i].split('.')[0]} key={'route_' + i} render={() => {
               //todo решить проблему с роутами Objects are not valid as a React child
               // const Component = Loadable({
@@ -72,7 +69,7 @@ class MainRouter extends React.Component {
     return (
       <IndexPage>
         <div className="content">
-
+          {/*TODO решить проблему с выводом el */}
         </div>
       </IndexPage>
     );
