@@ -1,0 +1,9 @@
+.container{
+  display: grid;
+  grid-template-columns: 10rem auto;
+  grid-template-rows: 10rem calc(100vh - 20rem) 10rem;
+  grid-template-areas:
+          "header content"
+          "sideBar content"
+          "footer footer";
+}
