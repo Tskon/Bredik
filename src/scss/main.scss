@@ -1,7 +1,9 @@
-
-
-
-
-
+@import "./core/variables";
+@import "./core/baseStyles";
+@import "./components/grid";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/sideBar";
+@import "./components/content";
 
 @import './vendor/prism.scss';
