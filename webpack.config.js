@@ -68,4 +68,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{ from: './src/index.php', to: 'index.php' }], {})
   ],
+  stats: {
+    colors: true,
+    chunks: true
+  }
 }
