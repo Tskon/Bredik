@@ -1,43 +1,13 @@
 import React from "react";
-import {Route, Redirect} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import {BrowserRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
-import Loadable from 'react-loadable';
-
-import {getArticlesList} from 'redux/actions/article';
 
 import IndexPage from 'layouts/indexPage';
 
 import ArticleWrapper from 'content/articleWrapper'
 
 class MainRouter extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      articleComponents: []
-    }
-  }
-
-  componentDidMount() {
-    this.props.dispatch(getArticlesList());
-
-  }
-
-  componentDidUpdate(){
-    if (this.props.articlesList && !this.state.articleComponents.length){
-      this.props.articlesList.forEach(article => {
-        const url = `content/articles/${article}`;
-        import('content/articles/mutationObserver.js').then(Component => {
-          this.setState({
-            articleComponents: [...this.state.articleComponents, Component]
-          })
-        })
-      })
-    }
-  }
-
   render() {
-    console.log(this.state.articleComponents)
     return (
       <BrowserRouter>
         <div>
@@ -48,23 +18,16 @@ class MainRouter extends React.Component {
     )
   }
 
-  setLoadableUrl(url) {
-    return import(url)
-  }
 
   setIndexContent(el) {
     return (
       <IndexPage>
         <div className="content">
-          {/*TODO решить проблему с выводом el */}
+          {el}
         </div>
       </IndexPage>
     );
   }
 }
 
-export default connect((store) => {
-  return {
-    articlesList: store.article.articlesList,
-  }
-})(MainRouter);
+export default MainRouter;
