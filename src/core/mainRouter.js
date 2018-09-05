@@ -8,8 +8,7 @@ import {getArticlesList} from 'redux/actions/article';
 
 import IndexPage from 'layouts/indexPage';
 
-// import OnWheelArticle from 'content/articles/onwheelArticle';
-// import MutationObserverArticle from 'content/articles/mutationObserver';
+import ArticleWrapper from 'content/articleWrapper'
 
 class MainRouter extends React.Component {
   constructor(){
@@ -43,19 +42,7 @@ class MainRouter extends React.Component {
       <BrowserRouter>
         <div>
           <Route exact path='/' component={IndexPage}/>
-          {this.state.articleComponents && this.state.articleComponents.map((article, i) => {
-            return <Route path={'/' + this.props.articlesList[i].split('.')[0]} key={'route_' + i} render={() => {
-              //todo решить проблему с роутами Objects are not valid as a React child
-              // const Component = Loadable({
-              //   loader: () => import('../content/articles/onwheelArticle'),
-              //   loading: () => {return <div>Loading...</div>},
-              // })
-              return this.setIndexContent(this.state.articleComponents);
-            }}/>
-          })}
-          {/*<Route path='/article1' render={() => {*/}
-          {/*return this.setIndexContent(<OnWheelArticle/>)*/}
-          {/*}}/>*/}
+          <Route path={'/article'} component={ArticleWrapper} />
         </div>
       </BrowserRouter>
     )
