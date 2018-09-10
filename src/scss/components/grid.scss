@@ -7,3 +7,19 @@
           "sideBar content"
           "footer footer";
 }
+
+.mainHeader{
+  grid-area: header;
+}
+
+.sideBar {
+  grid-area: sideBar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
