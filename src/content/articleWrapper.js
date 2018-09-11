@@ -1,5 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Loadable from 'react-loadable';
+
+import {getArticlesList} from "redux/actions/article";
 
 class ArticleWrapper extends React.Component {
   constructor() {
@@ -28,21 +31,19 @@ class ArticleWrapper extends React.Component {
   }
 
   render() {
+    console.log(this.state)
+    const Component = Loadable({
+      loader: () => import('../content/articles/onwheelArticle'),
+      loading: () => {
+        return <div>Loading...</div>
+      },
+    });
     return <div>
-      {this.state.articleComponents && this.state.articleComponents.map((article, i) => {
-        const Component = Loadable({
-          loader: () => import('../content/articles/onwheelArticle'),
-          loading: () => {
-            return <div>Loading...</div>
-          },
-        });
-
-        return (
-          <div>
-            <h2>{article}</h2>
-            {Component}
-          </div>)
-      })
+      {this.state.articleComponents &&
+      <div>
+        <h2>Заголовок</h2>
+        {Component}
+      </div>
       }
     </div>
   }
