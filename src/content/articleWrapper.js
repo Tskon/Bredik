@@ -15,7 +15,7 @@ class ArticleWrapper extends React.Component {
   componentDidMount() {
     this.props.dispatch(getArticlesList());
     import('content/articles/mutationObserver.js').then(Component => {
-      this.Component = Component;
+      this.CurrentArticle = Component;
       })
 
   }
@@ -34,18 +34,10 @@ class ArticleWrapper extends React.Component {
   }
 
   render() {
-    console.log(this.Component)
-    // const Component = Loadable({
-    //   loader: () => import('./articles/onwheelArticle'),
-    //   loading: () => {
-    //     return <div>Loading...</div>
-    //   },
-    // });
     return <div>
       {this.state.articleComponents &&
       <div>
-        <h2>Заголовок</h2>
-        {this.Component}
+        {this.CurrentArticle ? <this.CurrentArticle.default/> : ''}
       </div>
       }
     </div>
