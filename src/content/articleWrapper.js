@@ -8,39 +8,27 @@ class ArticleWrapper extends React.Component {
   constructor() {
     super();
     this.state = {
-      articleComponents: []
+      articleComponents: [],
+      currentArticle: null
     }
   }
 
   componentDidMount() {
     this.props.dispatch(getArticlesList());
-    import('content/articles/mutationObserver.js').then(Component => {
-      this.CurrentArticle = Component;
-      })
-
   }
 
-  componentDidUpdate() {
-    // if (this.props.articlesList && !this.state.articleComponents.length) {
-    //   this.props.articlesList.forEach(article => {
-    //     const url = `content/articles/${article}`;
-    //     import('content/articles/mutationObserver.js').then(Component => {
-    //       this.setState({
-    //         articleComponents: [...this.state.articleComponents, Component]
-    //       })
-    //     })
-    //   })
-    // }
+  componentDidUpdate(){
+    if (this.props.articlesList && !this.state.currentArticle) {
+      import(`content/articles/${this.props.articlesList[0]}`).then(Component => {
+        this.setState({currentArticle: Component});
+      })
+    }
   }
 
   render() {
-    return <div>
-      {this.state.articleComponents &&
-      <div>
-        {this.CurrentArticle ? <this.CurrentArticle.default/> : ''}
-      </div>
-      }
-    </div>
+    // console.log(this.props.articlesList)
+    console.log(this.state.currentArticle)
+    return <div>{this.state.currentArticle ? <this.state.currentArticle.default/> : ''}</div>
   }
 }
 
