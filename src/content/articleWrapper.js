@@ -26,8 +26,6 @@ class ArticleWrapper extends React.Component {
   }
 
   render() {
-    // console.log(this.props.articlesList)
-    console.log(this.state.currentArticle)
     return <div>{this.state.currentArticle ? <this.state.currentArticle.default/> : ''}</div>
   }
 }
