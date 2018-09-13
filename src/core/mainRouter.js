@@ -12,7 +12,9 @@ class MainRouter extends React.Component {
       <BrowserRouter>
         <div>
           <Route exact path='/' component={IndexPage}/>
-          <Route path={'/article'} component={ArticleWrapper} />
+          <Route path={'/article'} render={()=>{
+            return this.setIndexContent(<ArticleWrapper/>)
+          }}/>
         </div>
       </BrowserRouter>
     )

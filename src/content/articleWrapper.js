@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Loadable from 'react-loadable';
 
 import {getArticlesList} from "redux/actions/article";
 
