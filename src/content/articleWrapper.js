@@ -8,7 +8,7 @@ class ArticleWrapper extends React.Component {
     super();
     this.state = {
       articleComponents: [],
-      currentArticle: null
+      currentArticleIndex: 0,
     }
   }
 
@@ -18,10 +18,15 @@ class ArticleWrapper extends React.Component {
 
   componentDidUpdate(){
     if (this.props.articlesList && !this.state.currentArticle) {
-      import(`content/articles/${this.props.articlesList[0]}`).then(Component => {
+      import(`content/articles/${this.props.articlesList[this.state.currentArticleIndex]}`).then(Component => {
         this.setState({currentArticle: Component});
-      })
+      });
     }
+
+    const currentArticleIndex = document.location.pathname.split('/')[2] - 1 || 0;
+    console.log(this.state.currentArticleIndex,currentArticleIndex)
+    if (this.state.currentArticleIndex !== currentArticleIndex) this.setState({currentArticleIndex: currentArticleIndex});
+
   }
 
   render() {
