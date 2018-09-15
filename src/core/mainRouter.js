@@ -12,6 +12,7 @@ class MainRouter extends React.Component {
       <BrowserRouter>
         <div>
           <Route exact path='/' component={IndexPage}/>
+          // todo сделать универсальный адрес для статей
           <Route path={'/article'} render={()=>{
             return this.setIndexContent(<ArticleWrapper/>)
           }}/>
