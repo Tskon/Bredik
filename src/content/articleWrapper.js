@@ -24,7 +24,6 @@ class ArticleWrapper extends React.Component {
     }
 
     const currentArticleIndex = document.location.pathname.split('/')[2] - 1 || 0;
-    console.log(this.state.currentArticleIndex,currentArticleIndex)
     if (this.state.currentArticleIndex !== currentArticleIndex) this.setState({currentArticleIndex: currentArticleIndex});
 
   }
