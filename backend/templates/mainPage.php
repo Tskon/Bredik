@@ -9,7 +9,6 @@
   <title>Document</title>
 </head>
 <body>
-<h1>some shit</h1>
 <div id="mainApp"/>
 <script type="text/javascript" src="app/main.js"></script>
 </body>
