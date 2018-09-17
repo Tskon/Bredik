@@ -9,7 +9,11 @@ class ArticleWrapper extends React.Component {
     super(...arguments);
     this.state = {
       articleComponents: [],
+      currentArticle: null,
+      currentArticleId: null
     }
+
+    this.needUpdate = true;
   }
 
   componentDidMount() {
@@ -22,16 +26,20 @@ class ArticleWrapper extends React.Component {
 
 
   componentDidUpdate(){
-    if (this.props.articlesList && !this.state.currentArticle) {
+    if (this.props.match.params.id !== this.state.currentArticleId)  this.needUpdate = true;
+
+    if (this.props.articlesList && this.needUpdate) {
       import(`content/articles/${this.props.articlesList[this.props.match.params.id - 1]}`).then(Component => {
-        this.setState({currentArticle: Component});
+        this.setState({
+          currentArticle: Component,
+          currentArticleId: this.props.match.params.id
+        });
+        this.needUpdate = false;
       });
     }
-
   }
 
   render() {
-    console.log(this.props.match.params.id)
     return <div>{this.state.currentArticle ? <this.state.currentArticle.default/> : ''}</div>
   }
 }
