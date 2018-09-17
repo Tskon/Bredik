@@ -8,8 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET'){
     case '/login':
       print 'login page';
       break;
-    default:
+    case '/':
       renderPage($PATH_B . '/templates/mainPage.php');
+      break;
+//    case '/article':
+//      renderPage($PATH_B . '/templates/mainPage.php');
+//      break;
+    default:
+      if($uri !== '/article/app/main.js'){
+        renderPage($PATH_B . '/templates/mainPage.php');
+      }
   }
 }
 
