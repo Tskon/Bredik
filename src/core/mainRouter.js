@@ -1,6 +1,5 @@
 import React from "react";
-import {Route} from 'react-router-dom';
-import {HashRouter} from 'react-router-dom';
+import {Route, HashRouter, Switch} from 'react-router-dom';
 
 import IndexPage from 'layouts/indexPage';
 
@@ -11,10 +10,12 @@ class MainRouter extends React.Component {
     return (
       <HashRouter>
         <div>
+          <Switch>
           <Route path={'/article/:id'} render={()=>{
             return this.setIndexContent(<ArticleWrapper/>)
           }}/>
           <Route path='/' component={IndexPage}/>
+          </Switch>
         </div>
       </HashRouter>
     )
