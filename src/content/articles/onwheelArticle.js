@@ -4,7 +4,7 @@ class OnwheelArticle extends React.Component {
   render() {
     return (
       <article>
-        <h1>Стоит ли трогать onwheel?</h1>
+        <h1>Стоит ли изменять стандартные браузерные события (на примере onwheel)?</h1>
         <section>
           <h2>Ситуация</h2>
           <p>
@@ -18,7 +18,6 @@ class OnwheelArticle extends React.Component {
             <li>Home, End</li>
             <li>Space</li>
           </ul>
-
           <p>
             Повесили событие переключения слайда на кнопки с кодами 32, 40, 34, 38, 33, 36, 35 и задача почти решена!
             Осталось обработать скролл, вот тут подойдем подробнее.
