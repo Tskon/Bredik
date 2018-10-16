@@ -4,7 +4,7 @@ class MutationObserverArticle extends React.Component {
   render() {
     return (
       <article>
-        <h1>MutationObserver спешит на помощь</h1>
+        <h1>MutationObserver спешит на помощь или апгрейд сторонних библиотек</h1>
         <section>
           <h2>Проблема</h2>
           <p>
