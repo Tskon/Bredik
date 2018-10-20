@@ -28,6 +28,7 @@ class SideMenu extends React.Component {
             return <li key={'article_' + i}><Link to={'/article/' + ++i}>{this.state.articleTitle[articleName] ?
               this.state.articleTitle[articleName] : articleName}</Link></li>
           })}
+          <li key='createArticle'><Link to='/create/article'>Создать статью<Link/></li>
         </ul>
       </div>
     )
