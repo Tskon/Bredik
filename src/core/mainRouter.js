@@ -2,7 +2,7 @@ import React from "react";
 import {Route, HashRouter, Switch} from 'react-router-dom';
 
 import IndexPage from 'layouts/indexPage';
-
+import ArticleCreator from 'pages/ArticleCreator';
 import ArticleWrapper from 'content/articleWrapper'
 
 class MainRouter extends React.Component {
@@ -14,6 +14,7 @@ class MainRouter extends React.Component {
           <Route path={'/article/:id'} render={()=>{
             return this.setIndexContent(<ArticleWrapper/>)
           }}/>
+          <Route path='/create/article' component={ArticleCreator}/>
           <Route path='/' component={IndexPage}/>
           </Switch>
         </div>
