@@ -20,7 +20,7 @@ class SideMenu extends React.Component {
   }
 
   render() {
-    return (
+    return ( 
       <div>
         <ul className="sideMenu">
           {this.props.articlesList && this.props.articlesList.map((article, i) => {

@@ -7,7 +7,7 @@ class ArticleCreator extends React.Component{
 
   render(){
     return(
-      <form onSubmit={}>
+      <form onSubmit={this.onSubmit}>
         <div>
           <label htmlFor="articleTitle">Название статьи</label>
           <input type="articleTitle"/>
