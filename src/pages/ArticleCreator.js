@@ -18,12 +18,14 @@ class ArticleCreator extends React.Component{
             sdsdsdsd
           </textarea>
         </div>
+        <button>отправить</button>
       </form>
     );
   }
 
   onSubmit(e){
     e.preventDefault();
+    console.log('onSubmit')
   }
 }
 
