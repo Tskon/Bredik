@@ -35,7 +35,7 @@ class MutationObserverArticle extends React.Component {
           </p>
           <pre><code className="line-numbers language-js">
             {`
-              // выбираем целевой элемент
+              // выбираем ноду для наблюдения
               var target = document.getElementById('some-id');
 
               // создаём экземпляр MutationObserver
