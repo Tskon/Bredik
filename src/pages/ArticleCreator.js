@@ -10,11 +10,11 @@ class ArticleCreator extends React.Component{
       <form onSubmit={this.onSubmit}>
         <div>
           <label htmlFor="articleTitle">Название статьи</label>
-          <input type="articleTitle" placeholder='Название статьи'/>
+          <input type="articleTitle" placeholder='Название статьи' required={true}/>
         </div>
         <div>
           <label htmlFor="articleBody">Текст статьи</label>
-          <textarea name="articleBody" id="" cols="30" rows="10">
+          <textarea name="articleBody" id="" cols="30" rows="10" required={true}>
 
           </textarea>
         </div>
